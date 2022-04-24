@@ -8,16 +8,18 @@ using namespace std;
 
 namespace coup {
     class Player {
-        // private:
-         public:
+       
+        public:
             int _coins;
             Game _game;
             string _name;
             string _role;
 
-       
+        
             //constructer
             Player(Game g, string n);
+
+            Player();
             
 
             // virtual void setName(string n){
@@ -44,8 +46,6 @@ namespace coup {
             
 
            
-            
-
             string getName();
                 // return this->_name;
                 // return "string";

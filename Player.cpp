@@ -15,8 +15,9 @@ Player::Player(Game g, string n){
     this->_game=g;
     this->_name=n;
     this->_coins=0;
-    this->_role="player";
+    this->_role="Player";
 }
+
 
 
 
