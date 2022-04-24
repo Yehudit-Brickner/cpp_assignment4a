@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-// #include <iostream>
+#include <iostream>
 #include <vector>
 #include "Game.hpp"
 
@@ -16,59 +16,65 @@ namespace coup{
             string _name;
 
         
-            //constructer
-            Player(Game g, string n){
-                setGame(g);
-                setName(n);
-                setCoins(0);
+            // constructer
+            Player(Game g, string n);
+                // setGame(g);
+                // setName(n);
+                // setCoins(0);
+                // g.addplayer(*this);
+            
+
+            // Player();
+
+            virtual void setName(string n){
+                // this->_name=n;
             }
 
-
-
-            void setName(string n){
-                this->_name=n;
-            }
-
-            void setGame(Game g){
-                this->_game=g;
+            virtual void setGame(Game g){
+                // this->_game=g;
             }
           
-            void setCoins(int c){
-                this->_coins=c;
+            virtual void setCoins(int c){
+                // this->_coins=c;
             }
 
             int coins(){
-                return this->_coins;
+                // return this->_coins;
+                return 1;
             }
 
-            void updateCoins(int u){
-                int num = this->getCoins();
-                num=num+u;
-                setCoins(num);
+            virtual void updateCoins(int u){
+                // int num = this->getCoins();
+                // num=num+u;
+                // setCoins(num);
             }
 
            
             
 
-            string getName(){
-                return this->_name;
+            virtual string getName(){
+                // return this->_name;
+                return "string";
             }
 
-            int getCoins(){
-                return this->_coins;
+            virtual int getCoins(){
+                // return this->_coins;
+                return 1;
             }
 
-            Game getGame(){
-                return this->_game;
+            virtual Game getGame(){
+                // return this->_game;
+                Game g= Game();
+                return g;
             }
 
 
             void income(){
-                updateCoins(1);
+                // updateCoins(1);
             }
 
             void foreign_aid(){
-                updateCoins(2);
+                // updateCoins(2);
             }
 
 
@@ -82,3 +88,18 @@ namespace coup{
             
     };
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

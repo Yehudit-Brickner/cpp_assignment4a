@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Player.hpp"
 
 using namespace std;
@@ -8,19 +9,35 @@ namespace coup{
 
 
     public: 
-
+            int _coins;
+            Game _game;
+            string _name; 
      //constructer
-        Ambassador(Game g, string n);
+            Ambassador(Game g, string n);
+                // setGame(g);
+                // setName(n);
+                // setCoins(0);
+                // g.addplayer(*this);
+            
 
+            void setName(string n) override{
+                // this->_name=n;
+            }
 
+            void setGame(Game g) override{
+                // this->_game=g;
+            }
+          
+            void setCoins(int c) override{
+                // this->_coins=c;
+            }
 
+            void transfer(Player p1, Player p2){
+                // p1.updateCoins(-1);
+                // p2.updateCoins(1);
+            }
 
-        void transfer(Player p1, Player p2){
-            p1.updateCoins(-1);
-            p2.updateCoins(1);
-        }
-
-
+        
 
     
     };
