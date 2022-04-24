@@ -16,12 +16,7 @@ namespace coup{
 
        //constructer
             Duke(Game g, string n);
-            //     cout<< "this is a constructer for ambassador"<< endl;
-            // }
-                // setGame(g);
-                // setName(n);
-                // setCoins(0);
-                // g.addplayer(*this);
+           
             
 
 

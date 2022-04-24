@@ -6,6 +6,7 @@
 #include <stdexcept>
 #include <string>
 // #include "Game.hpp"
+using namespace std;
 
 using namespace coup;
 

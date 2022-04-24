@@ -16,13 +16,7 @@ namespace coup{
      
             //constructer
             Ambassador(Game g, string n);
-                // cout<< "this is a constructer for ambassador"<< endl;
-                // setGame(g);
-                // setName(n);
-                // setCoins(0);
-                // g.addplayer(*this);
-            
-            
+                            
 
             // void setName(string n) override{
             //     // this->_name=n;
@@ -36,13 +30,7 @@ namespace coup{
             //     // this->_coins=c;
             // }
 
-            void transfer(Player p1, Player p2){
-                // p1.updateCoins(-1);
-                // p2.updateCoins(1);
-            }
-
-        
-
+            void transfer(Player p1, Player p2);
     
     };
 }
