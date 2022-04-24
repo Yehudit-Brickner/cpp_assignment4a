@@ -16,6 +16,25 @@ Captain::Captain(Game g, string n){
     this->_role="Captain";
 }
 
+
+void Captain::income(){
+    updateCoins(1);
+}
+
+int Captain::coins(){
+    return this->getCoins();
+}
+
+void Captain::foreign_aid(){
+    updateCoins(2);
+}
+
+void Captain::block(Duke d){
+    
+}
+
+
+
 void Captain::steal(Player p){
     p.updateCoins(-2);
     this->updateCoins(2);

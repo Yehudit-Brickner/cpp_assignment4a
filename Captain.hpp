@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Player.hpp"
+#include "Duke.hpp"
 
 using namespace std;
 
@@ -18,8 +19,9 @@ namespace coup{
             Captain(Game g, string n);
                
             void income();
+            int coins();
             void foreign_aid();
-            void block(Player p);
+            void block(Duke d);
             void steal(Player p);
     };
 }

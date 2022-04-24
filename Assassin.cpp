@@ -18,9 +18,20 @@ Assassin::Assassin(Game g, string n){
 
 
 void Assassin::income(){
-    // updateCoins(1);
+    updateCoins(1);
 }
 
+int Assassin::coins(){
+    return this->getCoins();
+}
+
+void Assassin::foreign_aid(){
+    updateCoins(2);
+}
+
+void Assassin::block(Player p){
+    
+}
 
 
 void Assassin::coup(Player p){

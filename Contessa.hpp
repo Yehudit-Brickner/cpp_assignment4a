@@ -1,5 +1,6 @@
 #pragma once
 #include "Player.hpp"
+#include "Assassin.hpp"
 
 using namespace std;
 
@@ -15,8 +16,9 @@ namespace coup{
             Contessa(Game g, string n);      
 
             void income();
+            int coins();
             void foreign_aid();
-            void block(Player p);
+            void block(Assassin a);
             
     };
 }

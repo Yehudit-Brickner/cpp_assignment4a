@@ -19,6 +19,7 @@ namespace coup{
                         
 
         void income();
+        int coins();
         void foreign_aid();
         void block(Player p);
         void transfer(Player p1, Player p2);
