@@ -32,29 +32,26 @@ namespace coup {
             //     // this->_coins=c;
             // }
 
-            int coins(){
+            int coins();
                 // return this->_coins;
-                return 1;
-            }
+            //     return 1;
+            // }
 
-            virtual void updateCoins(int u){
+            virtual void updateCoins(int u);
                 // int num = this->getCoins();
                 // num=num+u;
                 // setCoins(num);
-            }
+            
 
            
             
 
-            virtual string getName(){
+            string getName();
                 // return this->_name;
-                return "string";
-            }
+                // return "string";
+            
 
-            virtual int getCoins(){
-                // return this->_coins;
-                return 1;
-            }
+            virtual int getCoins();
 
             // virtual Game getGame(){
             //     // return this->_game;
@@ -63,19 +60,12 @@ namespace coup {
             // }
 
 
-            void income(){
-                // updateCoins(1);
-            }
+            void income();
 
-            void foreign_aid(){
-                // updateCoins(2);
-            }
+            void foreign_aid();
 
 
-            void block(Player p){
-                // will need a queue to hold the last full turns of things to know what to block and how to rool back
-                cout<< "blocked"<<endl;
-            }
+            void block(Player p);
 
           
 
