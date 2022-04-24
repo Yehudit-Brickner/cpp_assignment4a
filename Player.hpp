@@ -1,21 +1,24 @@
-#pragma once
+// #pragma once
 #include <string>
-#include <iostream>
+// #include <iostream>
 #include <vector>
+#include "Game.hpp"
 
 using namespace std;
 
 namespace coup{
     class Player{
-        private:
+        // private:
+
+        public:
             int _coins;
             string _role;
             Game _game;
             string _name;
 
-        public:
+        // public:
 
-            Player(string g, sting n);
+            Player(Game g, string n);
 
 
             int coins(){
