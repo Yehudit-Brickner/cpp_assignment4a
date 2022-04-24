@@ -12,7 +12,6 @@ namespace coup{
 
         public:
             int _coins;
-            string _role;
             Game _game;
             string _name;
 
@@ -43,7 +42,7 @@ namespace coup{
             }
 
             void updateCoins(int u){
-                int num = this.getCoins();
+                int num = this->getCoins();
                 num=num+u;
                 setCoins(num);
             }
@@ -63,5 +62,23 @@ namespace coup{
                 return this->_game;
             }
 
+
+            void income(){
+                updateCoins(1);
+            }
+
+            void foreign_aid(){
+                updateCoins(2);
+            }
+
+
+            void block(Player p){
+                // will need a queue to hold the last full turns of things to know what to block and how to rool back
+                cout<< "blocked"<<endl;
+            }
+
+
+
+            
     };
 }
