@@ -16,28 +16,10 @@ namespace coup{
 
             //constructer
             Captain(Game g, string n);
-                // setGame(g);
-                // setName(n);
-                // setCoins(0);
-                // g.addplayer(*this);
-            
-
-
-            // void setName(string n) override{
-            //     // this->_name=n;
-            // }
-
-            // void setGame(Game g) override{
-            //     // this->_game=g;
-            // }
-          
-            // void setCoins(int c) override{
-            //     // this->_coins=c;
-            // }
-
-            void steal(Player p){
-                // p.updateCoins(-2);
-                // this->updateCoins(2);
-            }
+               
+            void income();
+            void foreign_aid();
+            void block(Player p);
+            void steal(Player p);
     };
 }

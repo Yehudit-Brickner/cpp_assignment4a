@@ -16,6 +16,13 @@ Assassin::Assassin(Game g, string n){
     this->_role="Assassin";
 }
 
+
+void Assassin::income(){
+    // updateCoins(1);
+}
+
+
+
 void Assassin::coup(Player p){
     this->updateCoins(-3);
     // kill p

@@ -17,6 +17,8 @@ Ambassador::Ambassador(Game g, string n){
     this->_role="Ambassador";
 }
 
+
+
 void transfer(Player p1, Player p2){
     p1.updateCoins(-1);
     p2.updateCoins(1);

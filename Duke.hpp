@@ -14,29 +14,12 @@ namespace coup{
             // Game _game;
             // string _name;
 
-       //constructer
+            //constructer
             Duke(Game g, string n);
-           
-            
-
-
-
-            // void setName(string n) override{
-            //     // this->_name=n;
-            // }
-
-            // void setGame(Game g) override{
-            //     // this->_game=g;
-            // }
-          
-            // void setCoins(int c) override{
-            //     // this->_coins=c;
-            // }
-
-
-
-        void tax(){
-            // this->updateCoins(3);
-        }
+        
+            void income();
+            void foreign_aid();
+            void block(Player p);
+            void tax();
     };
 }

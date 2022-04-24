@@ -9,28 +9,19 @@ namespace coup{
 
 
     public: 
-            // int _coins;
-            // Game _game;
-            // string _name; 
-     
-     
-            //constructer
-            Ambassador(Game g, string n);
-                            
+        // int _coins;
+        // Game _game;
+        // string _name; 
 
-            // void setName(string n) override{
-            //     // this->_name=n;
-            // }
 
-            // void setGame(Game g) override{
-            //     // this->_game=g;
-            // }
-          
-            // void setCoins(int c) override{
-            //     // this->_coins=c;
-            // }
+        //constructer
+        Ambassador(Game g, string n);
+                        
 
-            void transfer(Player p1, Player p2);
+        void income();
+        void foreign_aid();
+        void block(Player p);
+        void transfer(Player p1, Player p2);
     
     };
 }

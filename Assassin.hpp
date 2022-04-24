@@ -7,7 +7,6 @@ using namespace std;
 namespace coup{
     class Assassin : public Player{
 
-
         public:
 
             // int _coins;
@@ -16,28 +15,10 @@ namespace coup{
 
             //constructer
             Assassin(Game g, string n);
-                // setGame(g);
-                // setName(n);
-                // setCoins(0);
-                // g.addplayer(*this);
-            
-
-
-            // void setName(string n) override{
-            //     // this->_name=n;
-            // }
-
-            // void setGame(Game g) override{
-            //     // this->_game=g;
-            // }
-          
-            // void setCoins(int c) override{
-            //     // this->_coins=c;
-            // }
-
-            void coup(Player p){
-                // this->updateCoins(-3);
-                // kill p
-            }
+                
+            void income();
+            void foreign_aid();
+            void block(Player p);
+            void coup(Player p);
     };
 }

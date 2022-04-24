@@ -21,37 +21,36 @@ namespace coup {
 
             Player();
             
+            int coins();
+           
+            void updateCoins(int u);
+           
+            string getName();
+              
+            int getCoins();
+            
+            virtual string role();
+            
+            void income();
 
-            // virtual void setName(string n){
+            void foreign_aid();
+
+            virtual void block(Player p);
+
+          
+
+
+            //  void setName(string n){
             //     // this->_name=n;
             // }
 
-            // virtual void setGame(Game g){
+            //  void setGame(Game g){
             //     // this->_game=g;
             // }
           
-            // virtual void setCoins(int c){
+            //  void setCoins(int c){
             //     // this->_coins=c;
             // }
-
-            int coins();
-                // return this->_coins;
-            //     return 1;
-            // }
-
-            virtual void updateCoins(int u);
-                // int num = this->getCoins();
-                // num=num+u;
-                // setCoins(num);
-            
-
-           
-            string getName();
-                // return this->_name;
-                // return "string";
-            
-
-            virtual int getCoins();
 
             // virtual Game getGame(){
             //     // return this->_game;
@@ -59,15 +58,6 @@ namespace coup {
             //     return g;
             // }
 
-
-            void income();
-
-            void foreign_aid();
-
-
-            void block(Player p);
-
-          
 
             
     };

@@ -54,3 +54,8 @@ void Player::block(Player p){
 }
 
 
+
+string Player::role(){
+    return this->getName();
+}
+
