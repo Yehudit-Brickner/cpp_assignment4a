@@ -15,9 +15,9 @@ namespace coup{
             // string _name;
 
        //constructer
-            Duke(Game g, string n){
-                cout<< "this is a constructer for ambassador"<< endl;
-            }
+            Duke(Game g, string n);
+            //     cout<< "this is a constructer for ambassador"<< endl;
+            // }
                 // setGame(g);
                 // setName(n);
                 // setCoins(0);
@@ -26,17 +26,17 @@ namespace coup{
 
 
 
-            void setName(string n) override{
-                // this->_name=n;
-            }
+            // void setName(string n) override{
+            //     // this->_name=n;
+            // }
 
-            void setGame(Game g) override{
-                // this->_game=g;
-            }
+            // void setGame(Game g) override{
+            //     // this->_game=g;
+            // }
           
-            void setCoins(int c) override{
-                // this->_coins=c;
-            }
+            // void setCoins(int c) override{
+            //     // this->_coins=c;
+            // }
 
 
 

@@ -6,42 +6,31 @@
 
 using namespace std;
 
-namespace coup{
-    class Player{
+namespace coup {
+    class Player {
         // private:
+         public:
             int _coins;
             Game _game;
             string _name;
+            string _role;
 
-        public:
-            // constructer
-            // Player(Game g, string n);
-            //     cout<< "this is a constructor for player"<< endl;
-            //     // this->_game=g;
-            //     // this->_name=n;
-            //     // this->_coins=0;
-
-            //     // setGame(g);
-            //     // setName(n);
-            //     // setCoins(0);
-            //     // g.addplayer(*this);
+       
+            //constructer
+            Player(Game g, string n);
             
 
-            Player(){
-                cout<< "this is a constructor for player"<< endl;
-            }
+            // virtual void setName(string n){
+            //     // this->_name=n;
+            // }
 
-            virtual void setName(string n){
-                // this->_name=n;
-            }
-
-            virtual void setGame(Game g){
-                // this->_game=g;
-            }
+            // virtual void setGame(Game g){
+            //     // this->_game=g;
+            // }
           
-            virtual void setCoins(int c){
-                // this->_coins=c;
-            }
+            // virtual void setCoins(int c){
+            //     // this->_coins=c;
+            // }
 
             int coins(){
                 // return this->_coins;
@@ -67,11 +56,11 @@ namespace coup{
                 return 1;
             }
 
-            virtual Game getGame(){
-                // return this->_game;
-                Game g= Game();
-                return g;
-            }
+            // virtual Game getGame(){
+            //     // return this->_game;
+            //     Game g= Game();
+            //     return g;
+            // }
 
 
             void income(){
@@ -88,7 +77,7 @@ namespace coup{
                 cout<< "blocked"<<endl;
             }
 
-
+          
 
             
     };
