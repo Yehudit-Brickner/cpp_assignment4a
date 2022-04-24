@@ -1,7 +1,6 @@
 
 #pragma once
 #include "Player.hpp"
-
 #include <vector>
 #include <string>
 #include <iostream>
@@ -10,12 +9,12 @@
 
 using namespace std;
 
-// namespace coup {
+
     class Game {
         
 
         public:
-        std:: vector<Player> _p;
+        std:: vector<coup::Player> _p;
         int _turn;
 
         //constructer
@@ -25,7 +24,7 @@ using namespace std;
         //   _turn =-1;
         }
 
-        void addplayer(Player p){
+        void addplayer(coup::Player p){
             // _p.push_back(p);
         }
 
@@ -64,4 +63,3 @@ using namespace std;
             }
 
     };
-// }
