@@ -8,12 +8,14 @@ using namespace std;
 using namespace coup;
 
 
-Contessa::Contessa(Game g, string n){
+Contessa::Contessa(Game & g, string n){
     cout<< "this is a constructor for Contessa"<< endl;
     this->_game=g;
     this->_name=n;
     this->_coins=0;
     this->_role="Contessa";
+    //  g._p.push_back(*this);
+    g.addplayer(*this);
 }
 
 // void Contessa::income(){
@@ -32,6 +34,6 @@ Contessa::Contessa(Game g, string n){
 //      this->updateCoins(-7);
 // }
 
-// void Contessa::block(Assassin a){
+void Contessa::block(coup::Assassin a){
     
-// }
+}

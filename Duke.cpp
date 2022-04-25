@@ -10,12 +10,14 @@ using namespace std;
 using namespace coup;
 
 
-Duke::Duke(Game g, string n){
+Duke::Duke(Game & g, string n){
     cout<< "this is a constructor for Duke"<< endl;
     this->_game=g;
     this->_name=n;
     this->_coins=0;
     this->_role="Duke";
+    // g._p.push_back(*this);
+    g.addplayer(*this);
 }
 
 

@@ -8,12 +8,14 @@ using namespace std;
 using namespace coup;
 
 
-Captain::Captain(Game g, string n){
+Captain::Captain(Game & g, string n){
     cout<< "this is a constructor for Captain"<< endl;
     this->_game=g;
     this->_name=n;
     this->_coins=0;
     this->_role="Captain";
+    //  g._p.push_back(*this);
+    g.addplayer(*this);
 }
 
 
@@ -37,7 +39,7 @@ Captain::Captain(Game g, string n){
 //      this->updateCoins(-7);
 // }
 
-void Captain::steal(Player p){
+void Captain::steal(coup::Player p){
     // p.updateCoins(-2);
     // this->updateCoins(2);
 }

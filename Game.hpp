@@ -10,18 +10,20 @@
 using namespace std;
 
 namespace coup {
-
+    class Player;
     class Game {
         
 
         public:
-        // std:: vector<coup::Player> _p;
+        std:: vector<coup::Player> _p;
         int _turn;
 
         //constructer
         Game();
        
-        // void addplayer(coup::Player p);
+        void addplayer(coup::Player p);
+
+        void print();
 
         void setTurn(int t);
 

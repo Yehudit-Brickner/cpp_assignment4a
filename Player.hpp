@@ -8,7 +8,7 @@
 using namespace std;
 
 namespace coup {
-
+    class Game;
     class Player {
         public:
             int _coins;
@@ -17,7 +17,7 @@ namespace coup {
             string _role;
         
             //constructers
-            Player(coup::Game g, string n);
+            // Player(coup::Game g, string n);
             Player();
             
             int coins();
@@ -36,7 +36,7 @@ namespace coup {
     class Ambassador : public Player{
 
         public: 
-            Ambassador(Game g, string n);
+            Ambassador(Game & g, string n);
                             
             // void income();
             // int coins();
@@ -44,14 +44,14 @@ namespace coup {
             // string role()override;
             // void block(Player p);
             // void coup(Player p);
-            void transfer(Player p1, Player p2);
+            void transfer(coup::Player p1, coup::Player p2);
     
     };
 
     class Assassin : public Player{
 
         public:
-            Assassin(Game g, string n);
+            Assassin(Game & g, string n);
                 
             // void income();
             // int coins();
@@ -63,7 +63,7 @@ namespace coup {
     class Captain : public Player{
 
         public:
-            Captain(Game g, string n);
+            Captain(Game & g, string n);
                
             // void income();
             // int coins();
@@ -71,27 +71,27 @@ namespace coup {
             // string role()override;
             // void block(Player p);
             // void coup(Player p);
-            void steal(Player p);
+            void steal(coup::Player p);
     };
 
     class Contessa : public Player{
 
        public:
-            Contessa(Game g, string n);      
+            Contessa(Game & g, string n);      
 
             // void income();
             // int coins();
             // void foreign_aid();
             // string role()override;
             // void coup(Player p);
-            void block(Assassin a);
+            void block(coup::Assassin a);
             
     };
 
     class Duke : public Player {
 
         public:
-            Duke(Game g, string n);
+            Duke(Game & g, string n);
         
             // void income();
             // int coins();
