@@ -14,12 +14,12 @@ using namespace coup;
 
     Game g1{};
 
-    Duke duke{g1, "player1"};
-	Assassin assassin{g1, "player2"};
-	Ambassador ambassador{g1, "player3"};
-	Captain captain1{g1, "player4"};
-	Contessa contessa{g1, "player5"};
-    Captain captain2{g1, "player6"};
+    // Duke duke{g1, "player1"};
+	// Assassin assassin{g1, "player2"};
+	// Ambassador ambassador{g1, "player3"};
+	// Captain captain1{g1, "player4"};
+	// Contessa contessa{g1, "player5"};
+    // Captain captain2{g1, "player6"};
    
     // start game
 

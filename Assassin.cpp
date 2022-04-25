@@ -8,7 +8,7 @@ using namespace std;
 using namespace coup;
 
 
-Assassin::Assassin(Game g, string n){
+Assassin::Assassin(Game g, string n) {
     cout<< "this is a constructor for Assassin"<< endl;
     this->_game=g;
     this->_name=n;
@@ -17,20 +17,20 @@ Assassin::Assassin(Game g, string n){
 }
 
 
-void Assassin::income(){
-    updateCoins(1);
-}
+// void Assassin::income(){
+//     updateCoins(1);
+// }
 
-int Assassin::coins(){
-    return this->getCoins();
-}
+// int Assassin::coins(){
+//     return this->getCoins();
+// }
 
-void Assassin::foreign_aid(){
-    updateCoins(2);
-}
+// void Assassin::foreign_aid(){
+//     updateCoins(2);
+// }
 
 
-void Assassin::coup(Player p){
-    this->updateCoins(-3);
-    // kill p
-}
+// void Assassin::coup(Player p){
+//     this->updateCoins(-3);
+//     // kill p
+// }

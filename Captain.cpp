@@ -17,25 +17,25 @@ Captain::Captain(Game g, string n){
 }
 
 
-void Captain::income(){
-    updateCoins(1);
-}
+// void Captain::income(){
+//     updateCoins(1);
+// }
 
-int Captain::coins(){
-    return this->getCoins();
-}
+// int Captain::coins(){
+//     return this->getCoins();
+// }
 
-void Captain::foreign_aid(){
-    updateCoins(2);
-}
+// void Captain::foreign_aid(){
+//     updateCoins(2);
+// }
 
-void Captain::block(Duke d){
+// void Captain::block(Player p){
     
-}
+// }
 
-void Captain::coup(Player p){
-     this->updateCoins(-7);
-}
+// void Captain::coup(Player p){
+//      this->updateCoins(-7);
+// }
 
 void Captain::steal(Player p){
     // p.updateCoins(-2);

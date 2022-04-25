@@ -20,25 +20,25 @@ Ambassador::Ambassador(Game g, string n){
 
 
 
-void Ambassador::income(){
-    updateCoins(1);
-}
+// void Ambassador::income(){
+//     updateCoins(1);
+// }
 
-int Ambassador::coins(){
-    return this->getCoins();
-}
+// int Ambassador::coins(){
+//     return this->getCoins();
+// }
 
-void Ambassador::foreign_aid(){
-    updateCoins(2);
-}
+// void Ambassador::foreign_aid(){
+//     updateCoins(2);
+// }
 
-void Ambassador::block(Player p){
+// void Ambassador::block(Player p){
     
-}
+// }
 
-void Ambassador::coup(Player p){
-    this->updateCoins(-7);
-}
+// void Ambassador::coup(Player p){
+//     this->updateCoins(-7);
+// }
 
 
 void transfer(Player p1, Player p2){

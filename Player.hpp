@@ -10,35 +10,25 @@ using namespace std;
 namespace coup {
 
     class Player {
-       
         public:
             int _coins;
             coup::Game _game;
             string _name;
             string _role;
-
         
             //constructers
             Player(coup::Game g, string n);
             Player();
             
             int coins();
-           
             void updateCoins(int u);
-           
             string getName();
-              
             int getCoins();
-            
             virtual string role();
-            
             void income();
-
             void foreign_aid(); 
-
-            virtual void coup();
-
-     
+            void coup(Player p);
+            void block(Player p);
     };
 
 
@@ -46,14 +36,15 @@ namespace coup {
     class Ambassador : public Player{
 
         public: 
-        Ambassador(Game g, string n);
-                        
-        void income();
-        int coins();
-        void foreign_aid();
-        void block(Player p);
-        void coup(Player p);
-        void transfer(Player p1, Player p2);
+            Ambassador(Game g, string n);
+                            
+            // void income();
+            // int coins();
+            // void foreign_aid();
+            // string role()override;
+            // void block(Player p);
+            // void coup(Player p);
+            void transfer(Player p1, Player p2);
     
     };
 
@@ -62,10 +53,11 @@ namespace coup {
         public:
             Assassin(Game g, string n);
                 
-            void income();
-            int coins();
-            void foreign_aid();
-            void coup(Player p);
+            // void income();
+            // int coins();
+            // void foreign_aid();
+            // string role()override;
+            // void coup(Player p);
     };
 
     class Captain : public Player{
@@ -73,11 +65,12 @@ namespace coup {
         public:
             Captain(Game g, string n);
                
-            void income();
-            int coins();
-            void foreign_aid();
-            void block(Duke d);
-            void coup(Player p);
+            // void income();
+            // int coins();
+            // void foreign_aid();
+            // string role()override;
+            // void block(Player p);
+            // void coup(Player p);
             void steal(Player p);
     };
 
@@ -86,10 +79,11 @@ namespace coup {
        public:
             Contessa(Game g, string n);      
 
-            void income();
-            int coins();
-            void foreign_aid();
-            void coup(Player p);
+            // void income();
+            // int coins();
+            // void foreign_aid();
+            // string role()override;
+            // void coup(Player p);
             void block(Assassin a);
             
     };
@@ -99,13 +93,19 @@ namespace coup {
         public:
             Duke(Game g, string n);
         
-            void income();
-            int coins();
-            void foreign_aid();
-            void block(Player p);
-            void coup(Player p);
+            // void income();
+            // int coins();
+            // void foreign_aid();
+            // string role()override;
+            // void block(Player p);
+            // void coup(Player p);
             void tax();
     };
+
+
+
+
+    
 
 }
 

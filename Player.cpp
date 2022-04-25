@@ -1,4 +1,5 @@
 
+
 #include "Player.hpp"
 #include <iostream>
 #include <stdexcept>
@@ -32,7 +33,9 @@ void Player::updateCoins(int u){
     this->_coins=num;
 }
 
-
+int Player::coins(){
+    return -1;
+}
 
 
 
@@ -45,10 +48,10 @@ void Player::foreign_aid(){
 }
 
 
-// void Player::block(Player p){
-//     // will need a queue to hold the last full turns of things to know what to block and how to rool back
-//     cout<< "blocked"<<endl;
-// }
+void Player::block(Player p){
+    // will need a queue to hold the last full turns of things to know what to block and how to rool back
+    cout<< "blocked"<<endl;
+}
 
 
 
@@ -57,6 +60,6 @@ string Player::role(){
 }
 
 
-void Player::coup(){
+void Player::coup(Player p){
     
 }

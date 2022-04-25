@@ -1,6 +1,6 @@
+
+
 #include "Player.hpp"
-
-
 #include <iostream>
 #include <stdexcept>
 #include <string>
@@ -9,17 +9,17 @@
 using namespace coup;
 
 Game::Game(){
-    std:: vector<coup::Player> _p;
-    _p.resize(0);  
-    _turn =-1;
+    // std:: vector<coup::Player> _p;
+    // _p.resize(0);  
+    // _turn =-1;
 }
 
 
 
 
-void Game::addplayer(coup::Player p){
-    // _p.push_back(p);
-}
+// // void Game::addplayer(coup::Player p){
+// //     // _p.push_back(p);
+// // }
 
 
 void Game::setTurn(int t){

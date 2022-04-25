@@ -16,22 +16,22 @@ Contessa::Contessa(Game g, string n){
     this->_role="Contessa";
 }
 
-void Contessa::income(){
-    updateCoins(1);
-}
+// void Contessa::income(){
+//     updateCoins(1);
+// }
 
-int Contessa::coins(){
-    return this->getCoins();
-}
+// int Contessa::coins(){
+//     return this->getCoins();
+// }
 
-void Contessa::foreign_aid(){
-    updateCoins(2);
-}
+// void Contessa::foreign_aid(){
+//     updateCoins(2);
+// }
 
-void Contessa::coup(Player p){
-     this->updateCoins(-7);
-}
+// void Contessa::coup(Player p){
+//      this->updateCoins(-7);
+// }
 
-void Contessa::block(Assassin a){
+// void Contessa::block(Assassin a){
     
-}
+// }

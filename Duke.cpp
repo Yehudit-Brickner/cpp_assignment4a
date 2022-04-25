@@ -1,4 +1,4 @@
-#include "Duke.hpp"
+#include "Player.hpp"
 
 
 #include <iostream>
@@ -19,24 +19,24 @@ Duke::Duke(Game g, string n){
 }
 
 
-void Duke::income(){
-    updateCoins(1);
-}
+// void Duke::income(){
+//     updateCoins(1);
+// }
 
-int Duke::coins(){
-    return this->getCoins();
-}
+// int Duke::coins(){
+//     return this->getCoins();
+// }
 
-void Duke::foreign_aid(){
-    updateCoins(2);
-}
+// void Duke::foreign_aid(){
+//     updateCoins(2);
+// }
 
-void Duke::block(Player p){
+// void Duke::block(Player p){
     
-}
-void Duke::coup(Player p){
-     this->updateCoins(-7);
-}
+// }
+// void Duke::coup(Player p){
+//      this->updateCoins(-7);
+// }
 
 void Duke::tax(){
     this->updateCoins(3);
