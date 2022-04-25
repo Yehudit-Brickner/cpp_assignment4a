@@ -1,25 +1,25 @@
-#pragma once
-#include "Player.hpp"
-#include "Assassin.hpp"
+// #pragma once
+// #include "Player.hpp"
+// #include "Assassin.hpp"
 
-using namespace std;
+// using namespace std;
 
-namespace coup{
-    class Contessa : public Player{
+// namespace coup{
+//     class Contessa : public Player{
 
-       public:
-            // int _coins;
-            // Game _game;
-            // string _name;
+//        public:
+//             // int _coins;
+//             // Game _game;
+//             // string _name;
     
-           //constructer
-            Contessa(Game g, string n);      
+//            //constructer
+//             Contessa(Game g, string n);      
 
-            void income();
-            int coins();
-            void foreign_aid();
-            void coup(Player p);
-            void block(Assassin a);
+//             void income();
+//             int coins();
+//             void foreign_aid();
+//             void coup(Player p);
+//             void block(Assassin a);
             
-    };
-}
+//     };
+// }

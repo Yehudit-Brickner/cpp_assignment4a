@@ -43,57 +43,69 @@ namespace coup {
 
 
 
+    class Ambassador : public Player{
 
+        public: 
+        Ambassador(Game g, string n);
+                        
+        void income();
+        int coins();
+        void foreign_aid();
+        void block(Player p);
+        void coup(Player p);
+        void transfer(Player p1, Player p2);
+    
+    };
 
+    class Assassin : public Player{
 
+        public:
+            Assassin(Game g, string n);
+                
+            void income();
+            int coins();
+            void foreign_aid();
+            void coup(Player p);
+    };
 
+    class Captain : public Player{
 
-            // virtual void block(Player p);
+        public:
+            Captain(Game g, string n);
+               
+            void income();
+            int coins();
+            void foreign_aid();
+            void block(Duke d);
+            void coup(Player p);
+            void steal(Player p);
+    };
 
-            //  void setName(string n){
-            //     // this->_name=n;
-            // }
+    class Contessa : public Player{
 
-            //  void setGame(Game g){
-            //     // this->_game=g;
-            // }
-          
-            //  void setCoins(int c){
-            //     // this->_coins=c;
-            // }
+       public:
+            Contessa(Game g, string n);      
 
-            // virtual Game getGame(){
-            //     // return this->_game;
-            //     Game g= Game();
-            //     return g;
-            // }
+            void income();
+            int coins();
+            void foreign_aid();
+            void coup(Player p);
+            void block(Assassin a);
+            
+    };
 
-    // class Game {
+    class Duke : public Player {
+
+        public:
+            Duke(Game g, string n);
         
-
-    //     public:
-    //     std:: vector<coup::Player> _p;
-    //     int _turn;
-
-    //     //constructer
-    //     Game();
-       
-    //     void addplayer(coup::Player p);
-
-    //     void setTurn(int t);
-
-    //     // make a vector of the players name
-    //     std::vector<string> players();
-
-    //     // return whos turn it is
-    //     string turn();
-
-    //     // return the winners name
-    //     string winner();
-
-
-    // };
-
+            void income();
+            int coins();
+            void foreign_aid();
+            void block(Player p);
+            void coup(Player p);
+            void tax();
+    };
 
 }
 

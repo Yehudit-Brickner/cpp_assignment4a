@@ -1,4 +1,4 @@
-#include "Assassin.hpp"
+#include "Player.hpp"
 #include <iostream>
 #include <stdexcept>
 #include <string>
@@ -27,10 +27,6 @@ int Assassin::coins(){
 
 void Assassin::foreign_aid(){
     updateCoins(2);
-}
-
-void Assassin::block(Player p){
-    
 }
 
 
