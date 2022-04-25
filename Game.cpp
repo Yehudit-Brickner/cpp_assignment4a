@@ -11,7 +11,7 @@ using namespace coup;
 Game::Game(){
     std:: vector<coup::Player> _p;
     // _p.resize(0);  
-    _turn =-1;
+    _turn =0;
 }
 
 void Game::print(){
@@ -29,9 +29,12 @@ void Game::addplayer(coup::Player p){
 
 
 void Game::setTurn(int t){
+    cout<<"new turn="<< t<<endl;
     int size=this->_p.size();
+    cout<< "size=" << size<<endl;
     this->_turn=t%size;
 }
+
 
 
  // make a vector of the players name
@@ -46,17 +49,16 @@ void Game::setTurn(int t){
 
     string Game::turn(){
         int t=this->_turn;
-        setTurn(t+1);
         unsigned long tu=(unsigned long)(this)->_turn;
         vector<string> p=this->players();
         return p[tu];
-        return "string";
+        
     }
 
     string Game::winner(){
-        // if (this ->_p.size()==1){
-        //     return this->_p[0].getName();
-        // }
+        if (this ->_p.size()==1){
+            return this->_p[0].getName();
+        }
         // else{
         //     //throw exception
         // }

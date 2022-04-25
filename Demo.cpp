@@ -44,7 +44,7 @@ int main() {
 	for(string name : players){
 		cout << name << endl;
 	}
-
+	
 	// prints Moshe
 	cout << game_1.turn() << endl;
 
@@ -54,7 +54,7 @@ int main() {
 	ambassador.income();
 	captain.income();
 	contessa.income();
-
+	cout<< "added to them 1"<<endl;
 	// throws exception, it is duke's turn now
 	assassin.income();
 

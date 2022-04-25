@@ -22,6 +22,7 @@ namespace coup {
             
             int coins();
             void updateCoins(int u);
+            void updateTurn();
             string getName();
             int getCoins();
             virtual string role();

@@ -35,4 +35,5 @@ Assassin::Assassin(Game & g, string n) {
 // void Assassin::coup(Player p){
 //     this->updateCoins(-3);
 //     // kill p
+//     updateTurn();
 // }

@@ -42,4 +42,5 @@ Duke::Duke(Game & g, string n){
 
 void Duke::tax(){
     this->updateCoins(3);
+    updateTurn();
 }

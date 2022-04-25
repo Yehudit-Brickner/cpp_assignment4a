@@ -40,6 +40,7 @@ Captain::Captain(Game & g, string n){
 // }
 
 void Captain::steal(coup::Player p){
-    // p.updateCoins(-2);
-    // this->updateCoins(2);
+    p.updateCoins(-2);
+    this->updateCoins(2);
+    updateTurn();
 }

@@ -27,6 +27,8 @@ namespace coup {
 
         void setTurn(int t);
 
+      
+
         // make a vector of the players name
         std::vector<string> players();
 

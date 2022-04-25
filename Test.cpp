@@ -27,6 +27,7 @@ using namespace coup;
     // start game
 
     TEST_CASE("game 1"){
+        g1.print();
         vector<string> p1 ={"player1", "player2","player3", "player4","player5", "player6"};
         vector<string> players1 = g1.players();
         for (unsigned long i=0; i<p1.size();i++){
