@@ -9,6 +9,7 @@
 
 using namespace std;
 
+
 namespace coup {
 
     class Game {
@@ -28,9 +29,11 @@ namespace coup {
         // make a vector of the players name
         std::vector<string> players();
 
+        // return whos turn it is
         string turn();
 
-        coup::Player winner();
+        // return the winners name
+        string winner();
 
 
     };

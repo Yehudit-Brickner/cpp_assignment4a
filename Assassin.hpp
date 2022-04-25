@@ -21,5 +21,6 @@ namespace coup{
             void foreign_aid();
             void block(Player p);
             void coup(Player p);
+            void coup(Player p);
     };
 }

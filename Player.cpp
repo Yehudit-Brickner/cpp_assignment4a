@@ -1,11 +1,8 @@
 
 #include "Player.hpp"
-
-
 #include <iostream>
 #include <stdexcept>
 #include <string>
-// #include "Game.hpp"
 using namespace std;
 
 using namespace coup;
@@ -48,10 +45,10 @@ void Player::foreign_aid(){
 }
 
 
-void Player::block(Player p){
-    // will need a queue to hold the last full turns of things to know what to block and how to rool back
-    cout<< "blocked"<<endl;
-}
+// void Player::block(Player p){
+//     // will need a queue to hold the last full turns of things to know what to block and how to rool back
+//     cout<< "blocked"<<endl;
+// }
 
 
 
@@ -59,3 +56,7 @@ string Player::role(){
     return this->getName();
 }
 
+
+void Player::coup(){
+    
+}

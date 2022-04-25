@@ -34,9 +34,9 @@ void Duke::foreign_aid(){
 void Duke::block(Player p){
     
 }
-
-
-
+void Duke::coup(Player p){
+     this->updateCoins(-7);
+}
 
 void Duke::tax(){
     this->updateCoins(3);

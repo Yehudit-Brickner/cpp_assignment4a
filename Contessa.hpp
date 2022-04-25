@@ -18,6 +18,7 @@ namespace coup{
             void income();
             int coins();
             void foreign_aid();
+            void coup(Player p);
             void block(Assassin a);
             
     };

@@ -5,7 +5,7 @@
 using namespace std;
 
 namespace coup{
-    class Duke : public Player{
+    class Duke : public Player {
 
 
         public:
@@ -21,6 +21,7 @@ namespace coup{
             int coins();
             void foreign_aid();
             void block(Player p);
+            void coup(Player p);
             void tax();
     };
 }

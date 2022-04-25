@@ -33,9 +33,11 @@ void Captain::block(Duke d){
     
 }
 
-
+void Captain::coup(Player p){
+     this->updateCoins(-7);
+}
 
 void Captain::steal(Player p){
-    p.updateCoins(-2);
-    this->updateCoins(2);
+    // p.updateCoins(-2);
+    // this->updateCoins(2);
 }

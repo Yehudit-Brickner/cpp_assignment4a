@@ -28,6 +28,10 @@ void Contessa::foreign_aid(){
     updateCoins(2);
 }
 
+void Contessa::coup(Player p){
+     this->updateCoins(-7);
+}
+
 void Contessa::block(Assassin a){
     
 }

@@ -1,4 +1,4 @@
-#include "Game.hpp"
+#include "Player.hpp"
 
 
 #include <iostream>
@@ -9,7 +9,7 @@
 using namespace coup;
 
 Game::Game(){
-    std:: vector<Player> _p;
+    std:: vector<coup::Player> _p;
     _p.resize(0);  
     _turn =-1;
 }
@@ -18,23 +18,23 @@ Game::Game(){
 
 
 void Game::addplayer(coup::Player p){
-    _p.push_back(p);
+    // _p.push_back(p);
 }
 
 
 void Game::setTurn(int t){
-    int size=this->_p.size();
-    this->_turn=t%size;
+    // int size=this->_p.size();
+    // this->_turn=t%size;
 }
 
 
  // make a vector of the players name
     std::vector<string> Game::players(){
         std:: vector<string> playerss;
-        playerss.resize(this->_p.size());
-        for (unsigned long i=0; i<this->_p.size();i++){
-            playerss[i]=this->_p[i].getName();
-        }
+        // playerss.resize(this->_p.size());
+        // for (unsigned long i=0; i<this->_p.size();i++){
+        //     playerss[i]=this->_p[i].getName();
+        // }
         return playerss;
     }
 
@@ -47,11 +47,12 @@ void Game::setTurn(int t){
         return "string";
     }
 
-    coup::Player Game::winner(){
-        if (this ->_p.size()==1){
-            return this->_p[0];
-        }
-        else{
-            //throw exception
-        }
+    string Game::winner(){
+        // if (this ->_p.size()==1){
+        //     return this->_p[0].getName();
+        // }
+        // else{
+        //     //throw exception
+        // }
+        return "string";
     }

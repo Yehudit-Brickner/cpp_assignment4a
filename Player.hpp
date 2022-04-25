@@ -1,3 +1,4 @@
+
 #pragma once
 #include <string>
 #include <iostream>
@@ -7,18 +8,18 @@
 using namespace std;
 
 namespace coup {
+
     class Player {
        
         public:
             int _coins;
-            Game _game;
+            coup::Game _game;
             string _name;
             string _role;
 
         
-            //constructer
-            Player(Game g, string n);
-
+            //constructers
+            Player(coup::Game g, string n);
             Player();
             
             int coins();
@@ -33,12 +34,21 @@ namespace coup {
             
             void income();
 
-            void foreign_aid();
+            void foreign_aid(); 
 
-            virtual void block(Player p);
+            virtual void coup();
 
-          
+     
+    };
 
+
+
+
+
+
+
+
+            // virtual void block(Player p);
 
             //  void setName(string n){
             //     // this->_name=n;
@@ -58,18 +68,34 @@ namespace coup {
             //     return g;
             // }
 
+    // class Game {
+        
 
-            
-    };
+    //     public:
+    //     std:: vector<coup::Player> _p;
+    //     int _turn;
+
+    //     //constructer
+    //     Game();
+       
+    //     void addplayer(coup::Player p);
+
+    //     void setTurn(int t);
+
+    //     // make a vector of the players name
+    //     std::vector<string> players();
+
+    //     // return whos turn it is
+    //     string turn();
+
+    //     // return the winners name
+    //     string winner();
+
+
+    // };
+
+
 }
-
-
-
-
-
-
-
-
 
 
 
