@@ -9,9 +9,8 @@
 using namespace coup;
 
 Game::Game(){
-    std:: vector<coup::Player> _p;
-    // _p.resize(0);  
-    _turn =0;
+    std:: vector<coup::Player> _p;  
+    _turn = 0;
 }
 
 void Game::print(){
@@ -36,14 +35,14 @@ void Game::addplayer(coup::Player p){
 // }
 
 
-void coup::updateTurn(Game & g){
+void Game::updateTurn(){
     // int t=this->_game._turn;
     // cout<<"t="<< t<< endl;
-    int size=(int)g._p.size();
+    // int size=(int)this->_p.size();
     // cout<< "size=" << size<<endl;
-    // this->_game._turn=(t+1);
-    // cout<<this->_game._turn<<endl;
-    g._turn=(g._turn+1)%(int)g._p.size();
+    // // this->_game._turn=(t+1);
+    // // cout<<this->_game._turn<<endl;
+    // this->_turn=(this->_turn+1)%(int)this->_p.size();
 }
 
 
@@ -65,9 +64,9 @@ void coup::updateTurn(Game & g){
     }
 
     string Game::winner(){
-        if (this ->_p.size()==1){
-            return this->_p[0].getName();
-        }
+        // if (this ->_p.size()==1){
+        //     return this->_p[0].getName();
+        // }
         // else{
         //     //throw exception
         // }

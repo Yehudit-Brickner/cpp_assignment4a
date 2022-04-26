@@ -47,10 +47,12 @@ int main() {
 		cout << name << endl;
 	}
 
+	
 	// prints Moshe
 	cout << game_1.turn() << endl;
 
 	// throws no exceptions
+	
 	duke.income();
 	assassin.income();
 	ambassador.income();

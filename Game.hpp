@@ -21,14 +21,15 @@ namespace coup {
 
         //constructer
         Game();
+        ~Game(){}
        
         void addplayer(coup::Player p);
 
         void print();
 
-        void setTurn(int t);
+        // void setTurn(int t);
 
-        friend void updateTurn(Game & g);      
+        void updateTurn();      
 
         // make a vector of the players name
         std::vector<string> players();

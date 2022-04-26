@@ -12,13 +12,14 @@ namespace coup {
     class Player {
         public:
             int _coins;
-            coup::Game _game;
+            coup::Game  _game;
             string _name;
             string _role;
         
             //constructers
             // Player(coup::Game g, string n);
             Player();
+            ~Player(){}
             
             int coins();
             void updateCoins(int u);
@@ -38,7 +39,7 @@ namespace coup {
 
         public: 
             Ambassador(Game & g, string n);
-                            
+            ~Ambassador(){}              
             // void income();
             // int coins();
             // void foreign_aid();
@@ -53,7 +54,7 @@ namespace coup {
 
         public:
             Assassin(Game & g, string n);
-                
+            ~Assassin(){}     
             // void income();
             // int coins();
             // void foreign_aid();
@@ -65,7 +66,7 @@ namespace coup {
 
         public:
             Captain(Game & g, string n);
-               
+            ~Captain(){}  
             // void income();
             // int coins();
             // void foreign_aid();
@@ -79,7 +80,7 @@ namespace coup {
 
        public:
             Contessa(Game & g, string n);      
-
+            ~Contessa(){} 
             // void income();
             // int coins();
             // void foreign_aid();
@@ -93,7 +94,7 @@ namespace coup {
 
         public:
             Duke(Game & g, string n);
-        
+            ~Duke(){} 
             // void income();
             // int coins();
             // void foreign_aid();

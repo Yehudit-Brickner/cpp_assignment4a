@@ -8,17 +8,17 @@ using namespace std;
 
 using namespace coup;
 
-// Player::Player(Game g, string n){
+// Player::Player(Game & g, string n){
 //     cout<< "this is a constructor for player"<< endl;
 //     this->_game=g;
 //     this->_name=n;
 //     this->_coins=0;
 //     this->_role="Player";
 //     // g._p.push_back(*this);
-//     // g.addplayer(*this);
+//     g.addplayer(*this);
 // }
 Player::Player(){
-
+  
 }
 
 
@@ -47,12 +47,12 @@ void Player::income(){
     cout<<"income"<<endl;
     updateCoins(1);
     cout<<"added a coin"<<endl;
-    updateTurn(this->_game);
+    this->_game.updateTurn();
 }
 
 void Player::foreign_aid(){
     updateCoins(2);
-    updateTurn(this->_game);
+    this->_game.updateTurn();
 }
 
 
@@ -69,5 +69,19 @@ string Player::role(){
 
 
 void Player::coup(coup::Player p){
-    updateTurn( this->_game);
+    if (this->_role!="assassin"){
+        if (this->_coins<7){
+            throw std::invalid_argument( "cant pay 7 coins" ); 
+        }
+        // kill p
+        this->_game.updateTurn();
+
+    }
+    else{
+        if (this->_coins<3){
+            throw std::invalid_argument( "cant pay 3 coins" );  
+        }
+        // kill p
+        this->_game.updateTurn(); 
+    }
 }
