@@ -28,13 +28,23 @@ void Game::addplayer(coup::Player p){
 }
 
 
-void Game::setTurn(int t){
-    cout<<"new turn="<< t<<endl;
-    int size=this->_p.size();
-    cout<< "size=" << size<<endl;
-    this->_turn=t%size;
-}
+// void Game::setTurn(int t){
+//     cout<<"new turn="<< t<<endl;
+//     int size=this->_p.size();
+//     cout<< "size=" << size<<endl;
+//     this->_turn=t%size;
+// }
 
+
+void coup::updateTurn(Game & g){
+    // int t=this->_game._turn;
+    // cout<<"t="<< t<< endl;
+    int size=(int)g._p.size();
+    // cout<< "size=" << size<<endl;
+    // this->_game._turn=(t+1);
+    // cout<<this->_game._turn<<endl;
+    g._turn=(g._turn+1)%(int)g._p.size();
+}
 
 
  // make a vector of the players name
@@ -49,10 +59,9 @@ void Game::setTurn(int t){
 
     string Game::turn(){
         int t=this->_turn;
-        unsigned long tu=(unsigned long)(this)->_turn;
+        unsigned long tu=(unsigned long)this->_turn;
         vector<string> p=this->players();
-        return p[tu];
-        
+        return p[tu];        
     }
 
     string Game::winner(){

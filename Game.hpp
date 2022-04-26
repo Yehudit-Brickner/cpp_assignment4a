@@ -11,6 +11,7 @@ using namespace std;
 
 namespace coup {
     class Player;
+   
     class Game {
         
 
@@ -27,7 +28,7 @@ namespace coup {
 
         void setTurn(int t);
 
-      
+        friend void updateTurn(Game & g);      
 
         // make a vector of the players name
         std::vector<string> players();

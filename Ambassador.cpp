@@ -46,5 +46,5 @@ Ambassador::Ambassador(Game & g, string n){
 void Ambassador::transfer(coup::Player p1, coup::Player p2){
     p1.updateCoins(-1);
     p2.updateCoins(1);
-    updateTurn();
+    this->_game.updateTurn();
 }

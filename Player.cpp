@@ -38,23 +38,21 @@ void Player::updateCoins(int u){
 }
 
 int Player::coins(){
-    return -1;
+    return this->_coins;
 }
 
-void Player::updateTurn(){
-    int t=this->_game._turn;
-    cout<<"t="<< t<< endl;
-    this->_game.setTurn(t+1);
-}
+
 
 void Player::income(){
+    cout<<"income"<<endl;
     updateCoins(1);
-    updateTurn();
+    cout<<"added a coin"<<endl;
+    updateTurn(this->_game);
 }
 
 void Player::foreign_aid(){
     updateCoins(2);
-    updateTurn();
+    updateTurn(this->_game);
 }
 
 
@@ -71,6 +69,5 @@ string Player::role(){
 
 
 void Player::coup(coup::Player p){
-    
-    updateTurn();
+    updateTurn( this->_game);
 }

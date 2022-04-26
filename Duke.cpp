@@ -42,5 +42,6 @@ Duke::Duke(Game & g, string n){
 
 void Duke::tax(){
     this->updateCoins(3);
-    updateTurn();
+    cout<<"duke took tax"<<endl;
+    this->_game.updateTurn();
 }

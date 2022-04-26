@@ -35,5 +35,5 @@ Contessa::Contessa(Game & g, string n){
 // }
 
 void Contessa::block(coup::Assassin a){
-    
+       
 }

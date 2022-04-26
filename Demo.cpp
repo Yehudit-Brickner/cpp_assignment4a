@@ -11,6 +11,7 @@
 #include "Ambassador.hpp"
 #include "Captain.hpp"
 #include "Contessa.hpp"
+#include "Game.hpp"
 
 using namespace coup;
 
@@ -31,6 +32,7 @@ int main() {
 	Captain captain{game_1, "Reut"};
 	Contessa contessa{game_1, "Gilad"};
 
+
 	vector<string> players = game_1.players();
 
 	/*
@@ -44,7 +46,7 @@ int main() {
 	for(string name : players){
 		cout << name << endl;
 	}
-	
+
 	// prints Moshe
 	cout << game_1.turn() << endl;
 
@@ -54,7 +56,7 @@ int main() {
 	ambassador.income();
 	captain.income();
 	contessa.income();
-	cout<< "added to them 1"<<endl;
+
 	// throws exception, it is duke's turn now
 	assassin.income();
 
@@ -65,15 +67,15 @@ int main() {
 	// is income, which cannot be blocked by any role
 	captain.block(duke);
 
-	cout << duke.coins() << endl; // prints 2
-	cout << assassin.coins() << endl; // prints 3
+	cout <<"duke.coin() "<< duke.coins() << endl; // prints 2
+	cout <<"assassin.coin() "<< assassin.coins() << endl; // prints 3
 
 	// throws exception, the last operation duke performed
 	// is foreign aid, which cannot be blocked by contessa
 	contessa.block(assassin);
 
 	duke.block(assassin);
-	cout << assassin.coins() << endl; // prints 1
+	cout <<"assassin.coin() "<< assassin.coins() << endl; // prints 1
 
 	ambassador.transfer(duke, assassin); //transfers 1 coin from duke to assassin
 	captain.foreign_aid();
@@ -107,6 +109,7 @@ int main() {
 	players = game_1.players();
 	/*
 		prints:
+		Moshe
 		Yossi
 		Meirav
 		Reut

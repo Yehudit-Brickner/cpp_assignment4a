@@ -13,7 +13,7 @@ OBJECTS=$(subst .cpp,.o,$(SOURCES))
 run: demo
 	./demo
 
-demo1: Demo.o $(OBJECTS)
+demo: Demo.o $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o demo
 
 

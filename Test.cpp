@@ -34,56 +34,56 @@ using namespace coup;
             CHECK(p1[i]==players1[i]);
         }
 
-        // round 1
-    //     //all players take income
-    //     CHECK_NOTHROW( duke.income()); //1
-    //     CHECK_NOTHROW( assassin.income());  //1
-    //     CHECK_NOTHROW( ambassador.income());  //1
-    //     CHECK_NOTHROW( captain1.income()); //1
-    //     CHECK_NOTHROW( contessa.income()); //1
-    //     CHECK_NOTHROW( captain2.income()); //1
+        //round 1
+        //all players take income
+        CHECK_NOTHROW( duke.income()); //1
+        CHECK_NOTHROW( assassin.income());  //1
+        CHECK_NOTHROW( ambassador.income());  //1
+        CHECK_NOTHROW( captain1.income()); //1
+        CHECK_NOTHROW( contessa.income()); //1
+        CHECK_NOTHROW( captain2.income()); //1
 
-    // //     //round 2
-    // //     // players take income, forign_aid or tax
-    //     CHECK_NOTHROW( duke.tax()); //4
-    //     CHECK_NOTHROW( assassin.foreign_aid());  //3
-    //     CHECK_NOTHROW( ambassador.income());  //2
-    //     CHECK_NOTHROW( captain1.income()); //2
-    //     CHECK_NOTHROW( contessa.income()); //2
-    //     CHECK_NOTHROW( captain2.foreign_aid()); //3
+        //round 2
+        // players take income, forign_aid or tax
+        CHECK_NOTHROW( duke.tax()); //4
+        CHECK_NOTHROW( assassin.foreign_aid());  //3
+        CHECK_NOTHROW( ambassador.income());  //2
+        CHECK_NOTHROW( captain1.income()); //2
+        CHECK_NOTHROW( contessa.income()); //2
+        CHECK_NOTHROW( captain2.foreign_aid()); //3
 
 
-    // //     //round 3
-    // //     // players take tax or forign_aid, the assasin tries to kill captain2, contessa blockes.
-    // //     // duke blocks captain2 from taking forign_aid
-    //     CHECK_NOTHROW( duke.tax()); //7
-    //     CHECK_NOTHROW( assassin.coup(captain2));  //0
-    //     CHECK_NOTHROW( contessa.block(assassin)); // this is not the turn
-    //     CHECK_NOTHROW( ambassador.foreign_aid());  //4
-    //     CHECK_NOTHROW( captain1.foreign_aid()); //4
-    //     CHECK_NOTHROW( contessa.foreign_aid()); //4
-    //     CHECK_NOTHROW( captain2.foreign_aid()); //3
-    //     CHECK_NOTHROW( duke.block(captain2)); // this is not a turn
+        //round 3
+        // players take tax or forign_aid, the assasin tries to kill captain2, contessa blockes.
+        // duke blocks captain2 from taking forign_aid
+        CHECK_NOTHROW( duke.tax()); //7
+        CHECK_NOTHROW( assassin.coup(captain2));  //0
+        CHECK_NOTHROW( contessa.block(assassin)); // this is not the turn
+        CHECK_NOTHROW( ambassador.foreign_aid());  //4
+        CHECK_NOTHROW( captain1.foreign_aid()); //4
+        CHECK_NOTHROW( contessa.foreign_aid()); //4
+        CHECK_NOTHROW( captain2.foreign_aid()); //3
+        CHECK_NOTHROW( duke.block(captain2)); // this is not a turn
 
-    // //     //round 4
-    // //     // players take forign_aid or tax, the ambassador transfors 1 coin from captain1 to contessa
-    //     CHECK_NOTHROW( duke.tax()); //10
-    //     CHECK_NOTHROW( assassin.foreign_aid());  //0
-    //     CHECK_NOTHROW( duke.block(assassin)); // this is not a turn
-    //     CHECK_NOTHROW( ambassador.transfer(captain1,contessa));  //4
-    //     CHECK_NOTHROW( captain1.foreign_aid()); //5
-    //     CHECK_NOTHROW( contessa.foreign_aid()); //7
-    //     CHECK_NOTHROW( captain2.foreign_aid()); //5
+        //round 4
+        // players take forign_aid or tax, the ambassador transfors 1 coin from captain1 to contessa
+        CHECK_NOTHROW( duke.tax()); //10
+        CHECK_NOTHROW( assassin.foreign_aid());  //0
+        CHECK_NOTHROW( duke.block(assassin)); // this is not a turn
+        CHECK_NOTHROW( ambassador.transfer(captain1,contessa));  //4
+        CHECK_NOTHROW( captain1.foreign_aid()); //5
+        CHECK_NOTHROW( contessa.foreign_aid()); //7
+        CHECK_NOTHROW( captain2.foreign_aid()); //5
 
     // //     //round 5
     // //     // the duke has to assasin- he will assaisn the assain.
     // //     // everyone else takes forign_aid
-    //     CHECK_NOTHROW( duke.coup(assassin)); //3
-    //     CHECK_NOTHROW( assassin.foreign_aid());  //2
-    //     CHECK_NOTHROW( ambassador.income());  // 5
-    //     CHECK_NOTHROW( captain1.foreign_aid()); //7
-    //     CHECK_NOTHROW( contessa.foreign_aid()); //9
-    //     CHECK_NOTHROW( captain2.foreign_aid()); //7
+        CHECK_NOTHROW( duke.coup(assassin)); //3
+        CHECK_NOTHROW( assassin.foreign_aid());  //2
+        CHECK_NOTHROW( ambassador.income());  // 5
+        CHECK_NOTHROW( captain1.foreign_aid()); //7
+        CHECK_NOTHROW( contessa.foreign_aid()); //9
+        CHECK_NOTHROW( captain2.foreign_aid()); //7
     // //     // the assasin was not saved he is out if the game
     // //     vector<string> p2 ={"player1","player3", "player4","player5", "player6"};
     // //     vector<string> players2 = g1.players();

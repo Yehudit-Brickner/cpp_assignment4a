@@ -28,7 +28,7 @@ namespace coup {
             virtual string role();
             void income();
             void foreign_aid(); 
-            void coup(Player p);
+            void virtual coup(Player p);
             void block(Player p);
     };
 
@@ -58,7 +58,7 @@ namespace coup {
             // int coins();
             // void foreign_aid();
             // string role()override;
-            // void coup(Player p);
+            void coup(Player p) override;
     };
 
     class Captain : public Player{
