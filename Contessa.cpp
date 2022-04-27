@@ -15,24 +15,8 @@ Contessa::Contessa(Game & g, string n){
     this->_coins=0;
     this->_role="Contessa";
     //  g._p.push_back(*this);
-    g.addplayer(*this);
+    g.addplayer("Contessa");
 }
-
-// void Contessa::income(){
-//     updateCoins(1);
-// }
-
-// int Contessa::coins(){
-//     return this->getCoins();
-// }
-
-// void Contessa::foreign_aid(){
-//     updateCoins(2);
-// }
-
-// void Contessa::coup(Player p){
-//      this->updateCoins(-7);
-// }
 
 void Contessa::block(coup::Assassin a){
        

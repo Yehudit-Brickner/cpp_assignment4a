@@ -15,15 +15,17 @@ Game::Game(){
 
 void Game::print(){
     for (unsigned long i=0; i<this->_p.size();i++){
-        cout<< this->_p[i].getName() << "  ";
+        // cout<< this->_p[i].getName() << "  ";
+        cout<< _p[i]<< "   "<< endl;
     }
     cout << " "<<endl;
 }
 
 
 
-void Game::addplayer(coup::Player p){
-    _p.push_back(p);
+void Game::addplayer(string s){
+    // _p.push_back(p);
+    _p.push_back(s);
 }
 
 
@@ -48,12 +50,14 @@ void Game::updateTurn(){
 
  // make a vector of the players name
     std::vector<string> Game::players(){
-        std:: vector<string> playerss;
-        playerss.resize(this->_p.size());
-        for (unsigned long i=0; i<this->_p.size();i++){
-            playerss[i]=this->_p[i].getName();
-        }
-        return playerss;
+        // std:: vector<string> playerss;
+        // playerss.resize(this->_p.size());
+        // for (unsigned long i=0; i<this->_p.size();i++){
+        //     playerss[i]=this->_p[i].getName();
+        // }
+        // return playerss;
+        return this->_p;
+
     }
 
     string Game::turn(){

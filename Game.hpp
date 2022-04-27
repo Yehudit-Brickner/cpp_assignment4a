@@ -16,14 +16,15 @@ namespace coup {
         
 
         public:
-        std:: vector<coup::Player> _p;
+        // std:: vector<coup::Player> _p;
+        std:: vector<string> _p;
         int _turn;
 
         //constructer
         Game();
         ~Game(){}
        
-        void addplayer(coup::Player p);
+        void addplayer(string s);
 
         void print();
 

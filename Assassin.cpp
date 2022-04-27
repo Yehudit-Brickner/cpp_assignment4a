@@ -15,24 +15,14 @@ Assassin::Assassin(Game & g, string n) {
     this->_coins=0;
     this->_role="Assassin";
     //  g._p.push_back(*this);
-    g.addplayer(*this);
+    g.addplayer("Assassin");
 }
 
 
-// void Assassin::income(){
-//     updateCoins(1);
-// }
-
-// int Assassin::coins(){
-//     return this->getCoins();
-// }
-
-// void Assassin::foreign_aid(){
-//     updateCoins(2);
-// }
-
-
 void Assassin::coup(Player p){
+    if(this->_coins<3){
+         throw std::invalid_argument( "cant pay 3 coins" ); 
+    }
     this->updateCoins(-3);
     // kill p
     this->_game.updateTurn();

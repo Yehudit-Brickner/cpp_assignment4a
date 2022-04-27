@@ -102,12 +102,7 @@ namespace coup {
             // void block(Player p);
             // void coup(Player p);
             void tax();
-    };
-
-
-
-
-    
+    };    
 
 }
 
