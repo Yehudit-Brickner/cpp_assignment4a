@@ -11,6 +11,7 @@ using namespace coup;
 Game::Game(){
     std:: vector<coup::Player> _p;  
     _turn = 0;
+    
 }
 
 void Game::print(){
@@ -25,7 +26,10 @@ void Game::print(){
 
 void Game::addplayer(string s){
     // _p.push_back(p);
-    _p.push_back(s);
+    if(_p.size()<6){
+        _p.push_back(s);
+    }
+    // throw std::invalid_argument( "too many players" ); 
 }
 
 
