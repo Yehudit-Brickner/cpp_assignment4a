@@ -21,7 +21,8 @@ using namespace coup;
 	Contessa contessa{g1, "player5"};
     Captain captain2{g1, "player6"};
 
-    // Captain captain3{g1, "player7"};
+    // bash hrade
+    Captain captain3{g1, "player7"};
 
    
 
