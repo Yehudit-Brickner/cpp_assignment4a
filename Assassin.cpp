@@ -15,7 +15,7 @@ Assassin::Assassin(Game & g, string n) {
     this->_coins=0;
     this->_role="Assassin";
     this->_state = 0;
-    //  g._p.push_back(*this);
+    g._player.push_back(*this);
     g.addplayer("Assassin");
 }
 
