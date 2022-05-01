@@ -27,6 +27,9 @@ void Ambassador::transfer(coup::Player p1, coup::Player p2){
     if(this->_game->_player[turnn]!=this){
          throw std::invalid_argument( "not your turn!" ); 
     }
+    if(this->_coins>=10){
+        throw std::invalid_argument( "you have to do coup!" );  
+    }
     p1.updateCoins(-1);
     p2.updateCoins(1);
     // vector<Player> v1={p1,p2};
@@ -34,3 +37,7 @@ void Ambassador::transfer(coup::Player p1, coup::Player p2){
     // this->_game.gameTurns.push(t1);
     this->_game->updateTurn(); 
 }
+
+// void Ambassador::block(coup::Captain c){
+//     cout<<"blocked"<<endl;
+// }

@@ -52,9 +52,11 @@ void Player::setState(int s){
 void Player::income(){
     unsigned long turnn=(unsigned long)this->_game->_turn;
     if(this->_game->_player[turnn]!=this){
-         throw std::invalid_argument( "not your turn!" ); 
+        throw std::invalid_argument( "not your turn!" ); 
     }
-
+    if(this->_coins>=10){
+        throw std::invalid_argument( "you have to do coup!" );  
+    }
 
     cout<<"income"<<endl;
     updateCoins(1);
@@ -70,9 +72,13 @@ void Player::foreign_aid(){
     if(this->_game->_player[turnn]!=this){
          throw std::invalid_argument( "not your turn!" ); 
     }
-     cout<<"forign_aid"<<endl;
+    if(this->_coins>=10){
+        throw std::invalid_argument( "you have to do coup!" );  
+    }
+    
+    cout<<"forign_aid"<<endl;
     updateCoins(2);
-    cout<<"added a coin"<<endl;
+    cout<<"added 2 coins"<<endl;
     // Turn t1{*this, "forign_aid"};
     // this->_game.gameTurns.push(t1);
     this->_game->updateTurn();
@@ -91,7 +97,7 @@ string Player::role(){
 }
 
 
-void Player::coup(coup::Player p){
+void Player::coup(coup::Player  p){
     unsigned long turnn=(unsigned long)this->_game->_turn;
     if(this->_game->_player[turnn]!=this){
          throw std::invalid_argument( "not your turn!" ); 
@@ -99,6 +105,8 @@ void Player::coup(coup::Player p){
     cout << "a player is trying to coup. the player has " << this->_coins << " coins"<<endl;
     int const money1=7;
     int const money2=3;
+
+    /*
     // if (this->_role!="assassin"){
     //     if (this->_coins<money1){
     //         throw std::invalid_argument( "cant pay 7 coins" ); 
@@ -111,11 +119,12 @@ void Player::coup(coup::Player p){
 
     // }
     // else{
-    
+    */
+   
     if (this->_coins<money1){
         throw std::invalid_argument( "cant pay 7 coins" );  
     }
-    this->setState(1);
+    p.setState(1);
     vector<Player> v1={p};
     // Turn t1{*this, "coup",v1};
     // this->_game.gameTurns.push(t1);

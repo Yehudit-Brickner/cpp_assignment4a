@@ -26,10 +26,18 @@ void Captain::steal(coup::Player p){
     if(this->_game->_player[turnn]!=this){
          throw std::invalid_argument( "not your turn!" ); 
     }
+    if(this->_coins>=10){
+        throw std::invalid_argument( "you have to do coup!" );  
+    }
     p.updateCoins(-2);
     this->updateCoins(2);
     // vector<Player> v1={p};
     // Turn t1{*this, "steal"};
     // this->_game.gameTurns.push(t1);
     this->_game->updateTurn(); 
+}
+
+
+void Captain::block(coup::Captain c){
+    cout<<"blocked"<<endl;
 }

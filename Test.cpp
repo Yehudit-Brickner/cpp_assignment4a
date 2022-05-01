@@ -159,7 +159,7 @@ using namespace coup;
         // the duke has to assasin- he will assaisn the assain.
         // everyone else takes forign_aid
         CHECK_NOTHROW( duke.coup(assassin)); //3
-        CHECK_NOTHROW( assassin.foreign_aid());  //2
+        // CHECK_NOTHROW( assassin.foreign_aid());  //2
         CHECK_NOTHROW( ambassador.income());  // 5
         CHECK_NOTHROW( captain1.foreign_aid()); //7
         CHECK_NOTHROW( contessa.foreign_aid()); //9

@@ -55,7 +55,20 @@ using namespace coup;
         // cout<< "size of player vector=" << size2<<endl;
         // this->_game._turn=(t+1);
         // cout<<this->_turn<<endl;
+        
         this->_turn=(this->_turn+1)%(int)this->_player.size();
+        
+        unsigned long turnn= (unsigned long)this->_turn;
+        int num=this->_player[turnn]->_state;
+        while(num!=0){
+            // if (this->_player[turnn]->_state==1){
+            //     this->_player[turnn]->setState(2);
+            // }
+            this->_turn=(this->_turn+1)%(int)this->_player.size();
+            turnn= (unsigned long)this->_turn;
+            num=this->_player[turnn]->_state;
+        }
+
     }
 
  

@@ -28,9 +28,17 @@ void Duke::tax(){
     if(this->_game->_player[turnn]!=this){
          throw std::invalid_argument( "not your turn!" ); 
     }
+    if(this->_coins>=10){
+        throw std::invalid_argument( "you have to do coup!" );  
+    }
     this->updateCoins(3);
     cout<<"duke took tax"<<endl;
     // Turn t1{*this, "tax"};
     // this->_game.gameTurns.push(t1);
     this->_game->updateTurn(); 
+}
+
+
+void Duke::block(Player p){
+    cout<<"blocked"<< endl;
 }

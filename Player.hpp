@@ -34,7 +34,7 @@ namespace coup {
             void income();
             void foreign_aid(); 
             void virtual coup(Player p);
-            void block(Player p);
+            void virtual block(Player p);
             void setState(int s);
     };
 
@@ -45,12 +45,7 @@ namespace coup {
         public: 
             Ambassador(Game & g, string n);
             ~Ambassador(){}              
-            // void income();
-            // int coins();
-            // void foreign_aid();
-            // string role()override;
-            // void block(Player p);
-            // void coup(Player p);
+            // void block(coup::Captain c);
             void transfer(coup::Player p1, coup::Player p2);
     
     };
@@ -60,10 +55,6 @@ namespace coup {
         public:
             Assassin(Game & g, string n);
             ~Assassin(){}     
-            // void income();
-            // int coins();
-            // void foreign_aid();
-            // string role()override;
             void coup(Player p) override;
     };
 
@@ -72,13 +63,8 @@ namespace coup {
         public:
             Captain(Game & g, string n);
             ~Captain(){}  
-            // void income();
-            // int coins();
-            // void foreign_aid();
-            // string role()override;
-            // void block(Player p);
-            // void coup(Player p);
             void steal(coup::Player p);
+            void block(coup::Captain c);
     };
 
     class Contessa : public Player{
@@ -86,11 +72,6 @@ namespace coup {
        public:
             Contessa(Game & g, string n);      
             ~Contessa(){} 
-            // void income();
-            // int coins();
-            // void foreign_aid();
-            // string role()override;
-            // void coup(Player p);
             void block(coup::Assassin a);
             
     };
@@ -100,13 +81,8 @@ namespace coup {
         public:
             Duke(Game & g, string n);
             ~Duke(){} 
-            // void income();
-            // int coins();
-            // void foreign_aid();
-            // string role()override;
-            // void block(Player p);
-            // void coup(Player p);
             void tax();
+            void block(coup::Player p);
     };    
 
 }

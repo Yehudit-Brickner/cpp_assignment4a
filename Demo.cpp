@@ -60,7 +60,7 @@ int main() {
 	contessa.income();
 
 	// throws exception, it is duke's turn now
-	assassin.income();
+	// assassin.income();
 
 	duke.income();
 	assassin.foreign_aid();
