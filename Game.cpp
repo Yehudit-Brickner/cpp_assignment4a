@@ -45,28 +45,16 @@ using namespace coup;
     // }
 
 
-    void Game::updateTurn(){
-        // this->print();
-        // int t=this->_game._turn;
-        // cout<<"t="<< t<< endl;
-        // int size1=(int)this->_p.size();
-        // cout<< "size of player name vector=" << size1<<endl;
-        // int size2=(int)this->_player.size();
-        // cout<< "size of player vector=" << size2<<endl;
-        // this->_game._turn=(t+1);
-        // cout<<this->_turn<<endl;
-        
+    void Game::updateTurn(){    
+        cout<<"state of old player "<<this->_player[(unsigned long)this->_turn]->_state<< endl;        
         this->_turn=(this->_turn+1)%(int)this->_player.size();
-        
+        cout<<"state of new player "<<this->_player[(unsigned long)this->_turn]->_state<< endl;
         unsigned long turnn= (unsigned long)this->_turn;
-        int num=this->_player[turnn]->_state;
-        while(num!=0){
+        while(this->_player[(unsigned long)this->_turn]->_state!=0){
             // if (this->_player[turnn]->_state==1){
             //     this->_player[turnn]->setState(2);
             // }
             this->_turn=(this->_turn+1)%(int)this->_player.size();
-            turnn= (unsigned long)this->_turn;
-            num=this->_player[turnn]->_state;
         }
 
     }

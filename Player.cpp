@@ -85,10 +85,10 @@ void Player::foreign_aid(){
 }
 
 
-void Player::block(coup::Player p){
-    // will need a queue to hold the last full turns of things to know what to block and how to rool back
-    cout<< "blocked"<<endl;
-}
+// void Player::block(coup::Player p){
+//     // will need a queue to hold the last full turns of things to know what to block and how to rool back
+//     cout<< "blocked"<<endl;
+// }
 
 
 
@@ -97,7 +97,7 @@ string Player::role(){
 }
 
 
-void Player::coup(coup::Player  p){
+void Player::coup(coup::Player p){
     unsigned long turnn=(unsigned long)this->_game->_turn;
     if(this->_game->_player[turnn]!=this){
          throw std::invalid_argument( "not your turn!" ); 
@@ -106,28 +106,28 @@ void Player::coup(coup::Player  p){
     int const money1=7;
     int const money2=3;
 
-    /*
-    // if (this->_role!="assassin"){
-    //     if (this->_coins<money1){
-    //         throw std::invalid_argument( "cant pay 7 coins" ); 
-    //     }
-    //     this->setState(1);
-    //     vector<Player> v1={p};
-    //     // Turn t1{*this, "coup", v1};
-    //     // this->_game.gameTurns.push(t1);
-    //     this->_game->updateTurn();
+    
+    if (this->_role=="assassin"){
+        if (this->_coins<money2){
+            throw std::invalid_argument( "cant pay 7 coins" ); 
+        }
+        p.setState(1);
+        // vector<Player> v1={p};
+        // Turn t1{*this, "coup", v1};
+        // this->_game.gameTurns.push(t1);
+        this->_game->updateTurn();
 
-    // }
-    // else{
-    */
-   
-    if (this->_coins<money1){
-        throw std::invalid_argument( "cant pay 7 coins" );  
     }
-    p.setState(1);
-    vector<Player> v1={p};
-    // Turn t1{*this, "coup",v1};
-    // this->_game.gameTurns.push(t1);
-    this->_game->updateTurn(); 
-    // }
+    else{
+        if (this->_coins<money1){
+            throw std::invalid_argument( "cant pay 7 coins" );  
+        }
+    
+        p.setState(1);
+        cout<<"the assigned player state is "<< p._state <<endl;
+        // vector<Player> v1={p};
+        // Turn t1{*this, "coup",v1};
+        // this->_game.gameTurns.push(t1);
+        this->_game->updateTurn(); 
+    }
 }
