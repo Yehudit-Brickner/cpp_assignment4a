@@ -62,19 +62,19 @@ using namespace coup;
 
 
         //check everyones income
-        cout<<"\ncheck money"<<endl;
+        cout<<"\ncheck money1"<<endl;
         CHECK(duke.coins()==1);
         CHECK(assassin.coins()==1);
         CHECK(ambassador.coins()==1);
         CHECK(captain1.coins()==1);
         CHECK(contessa.coins()==1);
         CHECK(captain2.coins()==1);
-        cout<<"end check money\n"<<endl;
+        cout<<"end check money1\n"<<endl;
 
 
         //round 2
         // players take income, forign_aid or tax
-        // in this roud each player wil try to do a function they cant pay for
+        // in this round each player wil try to do a function they cant pay for
         CHECK_THROWS(duke.coup(captain1));
         CHECK_NOTHROW( duke.tax()); //4
         CHECK_THROWS(assassin.coup(captain1));
@@ -90,22 +90,22 @@ using namespace coup;
         
 
         //check everyones income
-        cout<<"\ncheck money"<<endl;
+        cout<<"\ncheck money2"<<endl;
         CHECK(duke.coins()==4);
         CHECK(assassin.coins()==3);
         CHECK(ambassador.coins()==2);
         CHECK(captain1.coins()==2);
         CHECK(contessa.coins()==2);
         CHECK(captain2.coins()==3);
-        cout<<"end check money\n"<<endl;
+        cout<<"end check money2\n"<<endl;
 
 
         //playing out of turn
-        // CHECK_THROWS(assassin.income());
-        // CHECK_THROWS(ambassador.income());
-        // CHECK_THROWS(captain2.income());
-        // CHECK_THROWS(contessa.income());
-        // CHECK_THROWS(captain1.income());
+        CHECK_THROWS(assassin.income());
+        CHECK_THROWS(ambassador.income());
+        CHECK_THROWS(captain2.income());
+        CHECK_THROWS(contessa.income());
+        CHECK_THROWS(captain1.income());
 
 
         //round 3
@@ -122,14 +122,14 @@ using namespace coup;
       
 
        //check everyones income
-        cout<<"\ncheck money"<<endl;
+        cout<<"\ncheck money3"<<endl;
         CHECK(duke.coins()==7);
         CHECK(assassin.coins()==0);
         CHECK(ambassador.coins()==4);
         CHECK(captain1.coins()==4);
         CHECK(contessa.coins()==4);
         CHECK(captain2.coins()==3);
-        cout<<"end check money\n"<<endl;
+        cout<<"end check money3\n"<<endl;
 
         //check everyines role
         cout<<"\ncheck role"<<endl;

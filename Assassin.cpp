@@ -23,10 +23,16 @@ Assassin::Assassin(Game & g, string n) {
 
 
 void Assassin::coup(Player p){
+    unsigned long turnn=(unsigned long)this->_game->_turn;
+    if(this->_game->_player[turnn]!=this){
+         throw std::invalid_argument( "not your turn!" ); 
+    }
+    
     if(this->_coins<3){
          throw std::invalid_argument( "cant pay 3 coins" ); 
     }
     this->updateCoins(-3);
     // kill p
-    // this->_game.updateTurn();
+    p.setState(1);
+    this->_game->updateTurn(); 
 }

@@ -23,10 +23,14 @@ Ambassador::Ambassador(Game & g, string n){
 }
 
 void Ambassador::transfer(coup::Player p1, coup::Player p2){
+    unsigned long turnn=(unsigned long)this->_game->_turn;
+    if(this->_game->_player[turnn]!=this){
+         throw std::invalid_argument( "not your turn!" ); 
+    }
     p1.updateCoins(-1);
     p2.updateCoins(1);
     // vector<Player> v1={p1,p2};
     // Turn t1{*this, "transfer",v1};
     // this->_game.gameTurns.push(t1);
-    // this->_game.updateTurn();
+    this->_game->updateTurn(); 
 }

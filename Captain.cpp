@@ -22,10 +22,14 @@ Captain::Captain(Game & g, string n){
 }
 
 void Captain::steal(coup::Player p){
+    unsigned long turnn=(unsigned long)this->_game->_turn;
+    if(this->_game->_player[turnn]!=this){
+         throw std::invalid_argument( "not your turn!" ); 
+    }
     p.updateCoins(-2);
     this->updateCoins(2);
     // vector<Player> v1={p};
     // Turn t1{*this, "steal"};
     // this->_game.gameTurns.push(t1);
-    // this->_game.updateTurn();
+    this->_game->updateTurn(); 
 }
