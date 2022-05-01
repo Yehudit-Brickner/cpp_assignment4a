@@ -4,11 +4,14 @@
 #include <iostream>
 #include <vector>
 #include "Game.hpp"
+// #include "Turn.hpp"
 
 using namespace std;
 
 namespace coup {
     class Game;
+    // class Turn;
+
     class Player {
         public:
             int _coins;

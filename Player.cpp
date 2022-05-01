@@ -56,6 +56,8 @@ void Player::income(){
 
 void Player::foreign_aid(){
     updateCoins(2);
+    // Turn t1{*this, "forign_aid"};
+    // this->_game.gameTurns.push(t1);
     this->_game.updateTurn();
 }
 
@@ -73,19 +75,27 @@ string Player::role(){
 
 
 void Player::coup(coup::Player p){
+    int const money1=7;
+    int const money2=3;
     if (this->_role!="assassin"){
-        if (this->_coins<7){
+        if (this->_coins<money1){
             throw std::invalid_argument( "cant pay 7 coins" ); 
         }
         this->setState(1);
+        vector<Player> v1={p};
+        // Turn t1{*this, "coup", v1};
+        // this->_game.gameTurns.push(t1);
         this->_game.updateTurn();
 
     }
     else{
-        if (this->_coins<3){
+        if (this->_coins<money2){
             throw std::invalid_argument( "cant pay 3 coins" );  
         }
         this->setState(1);
+        vector<Player> v1={p};
+        // Turn t1{*this, "coup",v1};
+        // this->_game.gameTurns.push(t1);
         this->_game.updateTurn(); 
     }
 }

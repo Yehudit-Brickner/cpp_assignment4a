@@ -1,16 +1,18 @@
 
 
 #include "Player.hpp"
+#include "Game.hpp"
 #include <iostream>
 #include <stdexcept>
 #include <string>
-
+#include <queue>
 
 using namespace coup;
 
 Game::Game(){
     std:: vector<coup::Player> _p;  
     _turn = 0;
+    // queue<Turn> gameTurns;
     
 }
 
@@ -24,9 +26,10 @@ void Game::print(){
 
 
 
-void Game::addplayer(string s){
+void Game::addplayer(string const s){
+    int const max_player=6;
     // _p.push_back(p);
-    if(_p.size()<6){
+    if(_p.size()<max_player){
         _p.push_back(s);
     }
     // throw std::invalid_argument( "too many players" ); 
