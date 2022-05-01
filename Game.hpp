@@ -13,11 +13,12 @@ using namespace std;
 
 namespace coup {
     class Player;
+    // class Turn;
     class Game {
         
 
         public:
-        std:: vector<coup::Player> _player;
+        std:: vector<coup::Player*> _player;
         std:: vector<string> _p;
         int _turn;
         // queue<Turn> gameTurns;
@@ -32,7 +33,9 @@ namespace coup {
 
         // void setTurn(int t);
 
-        void updateTurn();      
+        void updateTurn();     
+        friend void updateTurn1(Game & g);
+        
 
         // return a vector of the players name
         std::vector<string> players();

@@ -10,17 +10,22 @@ using namespace coup;
 
 Captain::Captain(Game & g, string n){
     cout<< "this is a constructor for Captain"<< endl;
-    this->_game=g;
+    this->_game=& g;
     this->_name=n;
     this->_coins=0;
     this->_role="Captain";
     this->_state = 0;
-     g._player.push_back(*this);
-    g.addplayer("Captain");
+    if (g._player.size()<6){
+        g._player.push_back(& *this);
+    }
+    g.addplayer(n);
 }
 
 void Captain::steal(coup::Player p){
     p.updateCoins(-2);
     this->updateCoins(2);
-    this->_game.updateTurn();
+    // vector<Player> v1={p};
+    // Turn t1{*this, "steal"};
+    // this->_game.gameTurns.push(t1);
+    // this->_game.updateTurn();
 }

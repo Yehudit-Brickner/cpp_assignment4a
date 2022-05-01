@@ -8,15 +8,17 @@ using namespace std;
 
 using namespace coup;
 
-// Player::Player(Game & g, string n){
-//     cout<< "this is a constructor for player"<< endl;
-//     this->_game=g;
-//     this->_name=n;
-//     this->_coins=0;
-//     this->_role="Player";
-//     // g._p.push_back(*this);
-//     g.addplayer(*this);
-// }
+Player::Player(Game & g, string n){
+    cout<< "this is a constructor for player"<< endl;
+    this->_game=& g;
+    this->_name=n;
+    this->_coins=0;
+    this->_role="Player";
+    if (g._player.size()<6){
+        g._player.push_back(& *this);
+    }
+    g.addplayer(n);
+}
 Player::Player(){
   
 }
@@ -51,14 +53,17 @@ void Player::income(){
     cout<<"income"<<endl;
     updateCoins(1);
     cout<<"added a coin"<<endl;
-    this->_game.updateTurn();
+    Game *g;
+    g = this->_game;
+    g->updateTurn();
+    // updateTurn1( this->_game);
 }
 
 void Player::foreign_aid(){
     updateCoins(2);
     // Turn t1{*this, "forign_aid"};
     // this->_game.gameTurns.push(t1);
-    this->_game.updateTurn();
+    // this->_game.updateTurn();
 }
 
 
@@ -85,7 +90,7 @@ void Player::coup(coup::Player p){
         vector<Player> v1={p};
         // Turn t1{*this, "coup", v1};
         // this->_game.gameTurns.push(t1);
-        this->_game.updateTurn();
+        // this->_game.updateTurn();
 
     }
     else{
@@ -96,6 +101,6 @@ void Player::coup(coup::Player p){
         vector<Player> v1={p};
         // Turn t1{*this, "coup",v1};
         // this->_game.gameTurns.push(t1);
-        this->_game.updateTurn(); 
+        // this->_game.updateTurn(); 
     }
 }

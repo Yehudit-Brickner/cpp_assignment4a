@@ -42,8 +42,8 @@ using namespace coup;
             CHECK(p1[i]==players1[i]);
         }
 
-
-        
+        g1.updateTurn();
+        cout<<"after updating turn, the turn is now "<< g1._turn<<endl;
 
 
         //round 1

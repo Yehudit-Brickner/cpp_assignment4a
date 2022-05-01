@@ -9,53 +9,63 @@
 
 using namespace coup;
 
-Game::Game(){
-    std:: vector<coup::Player> _p;  
-    _turn = 0;
-    // queue<Turn> gameTurns;
+    Game::Game(){
+        std:: vector<coup::Player*> _player;
+        std:: vector<string> _p; 
+        _turn = 0;
+        // queue<Turn> gameTurns;
+        
+    }
+
+    void Game::print(){
+        for (unsigned long i=0; i<this->_p.size();i++){
+            // cout<< this->_p[i].getName() << "  ";
+            cout<< _p[i]<< "   "<< endl;
+        }
+        cout << " "<<endl;
+    }
+
+
+
+    void Game::addplayer(string const s){
+        int const max_player=6;
+        // _p.push_back(p);
+        if(_p.size()<max_player){
+            _p.push_back(s);
+        }
+        // throw std::invalid_argument( "too many players" ); 
+    }
+
+
+    // void Game::setTurn(int t){
+    //     cout<<"new turn="<< t<<endl;
+    //     int size=this->_p.size();
+    //     cout<< "size=" << size<<endl;
+    //     this->_turn=t%size;
+    // }
+
+
+    void Game::updateTurn(){
+        // this->print();
+        // int t=this->_game._turn;
+        // cout<<"t="<< t<< endl;
+        int size1=(int)this->_p.size();
+        cout<< "size of player name vector=" << size1<<endl;
+        int size2=(int)this->_player.size();
+        cout<< "size of player vector=" << size2<<endl;
+        // // this->_game._turn=(t+1);
+        cout<<this->_turn<<endl;
+        this->_turn=(this->_turn+1)%(int)this->_player.size();
+    }
+
+    void coup::updateTurn1(Game & g){
+        g.print();
+        g._turn=(g._turn+1)%(int)g._player.size();
+    }
+
     
-}
-
-void Game::print(){
-    for (unsigned long i=0; i<this->_p.size();i++){
-        // cout<< this->_p[i].getName() << "  ";
-        cout<< _p[i]<< "   "<< endl;
-    }
-    cout << " "<<endl;
-}
-
-
-
-void Game::addplayer(string const s){
-    int const max_player=6;
-    // _p.push_back(p);
-    if(_p.size()<max_player){
-        _p.push_back(s);
-    }
-    // throw std::invalid_argument( "too many players" ); 
-}
-
-
-// void Game::setTurn(int t){
-//     cout<<"new turn="<< t<<endl;
-//     int size=this->_p.size();
-//     cout<< "size=" << size<<endl;
-//     this->_turn=t%size;
-// }
-
-
-void Game::updateTurn(){
-    // int t=this->_game._turn;
-    // cout<<"t="<< t<< endl;
-    // int size=(int)this->_p.size();
-    // cout<< "size=" << size<<endl;
-    // // this->_game._turn=(t+1);
-    // // cout<<this->_game._turn<<endl;
-    // this->_turn=(this->_turn+1)%(int)this->_p.size();
-}
-
-
- // make a vector of the players name
+ 
+// make a vector of the players name
     std::vector<string> Game::players(){
         // std:: vector<string> playerss;
         // playerss.resize(this->_p.size());

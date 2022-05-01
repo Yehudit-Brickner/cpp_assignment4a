@@ -15,13 +15,13 @@ namespace coup {
     class Player {
         public:
             int _coins;
-            coup::Game  _game;
+            coup::Game* _game;
             string _name;
             string _role;
             int _state;
         
             //constructers
-            // Player(coup::Game g, string n);
+            Player(coup::Game & g, string n);
             Player();
             ~Player(){}
             
