@@ -16,6 +16,7 @@ Duke::Duke(Game & g, string n){
     this->_name = n;
     this->_coins = 0;
     this->_role = "Duke";
+    this->_state = 0;
     // g._p.push_back(*this);
     g.addplayer("Duke");
 }

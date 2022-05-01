@@ -15,6 +15,7 @@ namespace coup {
             coup::Game  _game;
             string _name;
             string _role;
+            int _state;
         
             //constructers
             // Player(coup::Game g, string n);
@@ -31,6 +32,7 @@ namespace coup {
             void foreign_aid(); 
             void virtual coup(Player p);
             void block(Player p);
+            void setState(int s);
     };
 
 

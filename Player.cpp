@@ -41,6 +41,10 @@ int Player::coins(){
     return this->_coins;
 }
 
+void Player::setState(int s){
+    this->_state=1;
+}
+
 
 
 void Player::income(){
@@ -73,7 +77,7 @@ void Player::coup(coup::Player p){
         if (this->_coins<7){
             throw std::invalid_argument( "cant pay 7 coins" ); 
         }
-        // kill p
+        this->setState(1);
         this->_game.updateTurn();
 
     }
@@ -81,7 +85,7 @@ void Player::coup(coup::Player p){
         if (this->_coins<3){
             throw std::invalid_argument( "cant pay 3 coins" );  
         }
-        // kill p
+        this->setState(1);
         this->_game.updateTurn(); 
     }
 }
