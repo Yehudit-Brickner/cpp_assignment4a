@@ -53,17 +53,17 @@ void Player::income(){
     cout<<"income"<<endl;
     updateCoins(1);
     cout<<"added a coin"<<endl;
-    Game *g;
-    g = this->_game;
-    g->updateTurn();
-    // updateTurn1( this->_game);
+    // Game *g;
+    // g = this->_game;
+    // g->updateTurn();
+    this->_game->updateTurn();
 }
 
 void Player::foreign_aid(){
     updateCoins(2);
     // Turn t1{*this, "forign_aid"};
     // this->_game.gameTurns.push(t1);
-    // this->_game.updateTurn();
+    this->_game->updateTurn();
 }
 
 
@@ -90,7 +90,7 @@ void Player::coup(coup::Player p){
         vector<Player> v1={p};
         // Turn t1{*this, "coup", v1};
         // this->_game.gameTurns.push(t1);
-        // this->_game.updateTurn();
+        this->_game->updateTurn();
 
     }
     else{
@@ -101,6 +101,6 @@ void Player::coup(coup::Player p){
         vector<Player> v1={p};
         // Turn t1{*this, "coup",v1};
         // this->_game.gameTurns.push(t1);
-        // this->_game.updateTurn(); 
+        this->_game->updateTurn(); 
     }
 }

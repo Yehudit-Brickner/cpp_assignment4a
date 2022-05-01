@@ -49,19 +49,16 @@ using namespace coup;
         // this->print();
         // int t=this->_game._turn;
         // cout<<"t="<< t<< endl;
-        int size1=(int)this->_p.size();
-        cout<< "size of player name vector=" << size1<<endl;
-        int size2=(int)this->_player.size();
-        cout<< "size of player vector=" << size2<<endl;
-        // // this->_game._turn=(t+1);
-        cout<<this->_turn<<endl;
+        // int size1=(int)this->_p.size();
+        // cout<< "size of player name vector=" << size1<<endl;
+        // int size2=(int)this->_player.size();
+        // cout<< "size of player vector=" << size2<<endl;
+        // this->_game._turn=(t+1);
+        // cout<<this->_turn<<endl;
         this->_turn=(this->_turn+1)%(int)this->_player.size();
     }
 
-    void coup::updateTurn1(Game & g){
-        g.print();
-        g._turn=(g._turn+1)%(int)g._player.size();
-    }
+ 
 
     
  

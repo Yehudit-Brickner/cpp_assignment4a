@@ -42,18 +42,22 @@ using namespace coup;
             CHECK(p1[i]==players1[i]);
         }
 
-        g1.updateTurn();
-        cout<<"after updating turn, the turn is now "<< g1._turn<<endl;
-
 
         //round 1
         //all players take income
+        CHECK(g1._turn==0);
         CHECK_NOTHROW( duke.income()); //1
+        CHECK(g1._turn==1);
         CHECK_NOTHROW( assassin.income());  //1
+        CHECK(g1._turn==2);
         CHECK_NOTHROW( ambassador.income());  //1
+        CHECK(g1._turn==3);
         CHECK_NOTHROW( captain1.income()); //1
+        CHECK(g1._turn==4);
         CHECK_NOTHROW( contessa.income()); //1
+        CHECK(g1._turn==5);
         CHECK_NOTHROW( captain2.income()); //1
+        CHECK(g1._turn==0);
      
 
 

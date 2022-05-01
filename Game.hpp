@@ -34,7 +34,6 @@ namespace coup {
         // void setTurn(int t);
 
         void updateTurn();     
-        friend void updateTurn1(Game & g);
         
 
         // return a vector of the players name
