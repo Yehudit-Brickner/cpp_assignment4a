@@ -41,3 +41,7 @@ void Captain::steal(coup::Player p){
 void Captain::block(coup::Captain c){
     cout<<"blocked"<<endl;
 }
+
+void Captain::block(coup::Duke d){
+    cout<<"blocked"<<endl;
+}

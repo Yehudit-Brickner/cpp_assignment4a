@@ -40,15 +40,7 @@ namespace coup {
 
 
 
-    class Ambassador : public Player{
-
-        public: 
-            Ambassador(Game & g, string n);
-            ~Ambassador(){}              
-            // void block(coup::Captain c);
-            void transfer(coup::Player p1, coup::Player p2);
-    
-    };
+   
 
     class Assassin : public Player{
 
@@ -58,6 +50,15 @@ namespace coup {
             void coup(Player p) override;
     };
 
+     class Duke : public Player {
+
+        public:
+            Duke(Game & g, string n);
+            ~Duke(){} 
+            void tax();
+            void block(coup::Player p);
+    };   
+
     class Captain : public Player{
 
         public:
@@ -65,6 +66,17 @@ namespace coup {
             ~Captain(){}  
             void steal(coup::Player p);
             void block(coup::Captain c);
+            void block(coup:: Duke d);
+    };
+    
+     class Ambassador : public Player{
+
+        public: 
+            Ambassador(Game & g, string n);
+            ~Ambassador(){}              
+            void block(coup::Captain c);
+            void transfer(coup::Player p1, coup::Player p2);
+    
     };
 
     class Contessa : public Player{
@@ -76,14 +88,7 @@ namespace coup {
             
     };
 
-    class Duke : public Player {
-
-        public:
-            Duke(Game & g, string n);
-            ~Duke(){} 
-            void tax();
-            void block(coup::Player p);
-    };    
+    
 
 }
 
