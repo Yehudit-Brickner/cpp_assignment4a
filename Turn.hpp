@@ -19,7 +19,7 @@ namespace coup {
 
         Turn(Player p, int c, string s, vector<Player*> v);
         Turn(Player p, int c, string s);
-
+        ~Turn(){}
         Player* getPlayer();
         int getCoins_stolen();
         string getAction();
@@ -27,6 +27,7 @@ namespace coup {
         bool getBlocked();
 
         void setBlocked(bool b);
-        ~Turn(){}
+        void print();
+       
     };
 }

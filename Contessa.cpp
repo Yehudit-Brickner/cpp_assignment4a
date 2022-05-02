@@ -21,6 +21,11 @@ Contessa::Contessa(Game & g, string n){
     g.addplayer(n);
 }
 
+
+string Contessa::role(){
+    return this->_role;
+}
+
 void Contessa::block(coup::Assassin a){
     
     int start=(int)this->_game->_gameTurns.size()-1;

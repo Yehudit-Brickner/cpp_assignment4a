@@ -46,3 +46,10 @@ Turn::Turn(Player p,int c, string s){
     void Turn::setBlocked(bool b){
         this->_blocked=b;
     }
+
+    void Turn::print(){
+        cout<<"starting printing"<<endl;
+        cout<< this->_whoPlayed <<"  "; 
+        Player * p=this->_whoPlayed;
+        cout<< this->_action<< endl;
+    }

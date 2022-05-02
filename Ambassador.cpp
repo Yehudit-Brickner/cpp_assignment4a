@@ -22,6 +22,11 @@ Ambassador::Ambassador(Game & g, string n){
     g.addplayer(n);
 }
 
+string Ambassador::role(){
+    return this->_role;
+}
+
+
 void Ambassador::transfer(coup::Player p1, coup::Player p2){
     unsigned long turnn=(unsigned long)this->_game->_turn;
     if(this->_game->_player[turnn]!=this){

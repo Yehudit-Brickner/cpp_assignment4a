@@ -65,11 +65,17 @@ using namespace coup;
         //check everyones income
         cout<<"\ncheck money1"<<endl;
         CHECK(duke.coins()==1);
+        CHECK(duke.role()=="Duke");
         CHECK(assassin.coins()==1);
+        CHECK(assassin.role()=="Assassin");
         CHECK(ambassador.coins()==1);
+        CHECK(ambassador.role()=="Ambassador");
         CHECK(captain1.coins()==1);
+        CHECK(captain1.role()=="Captain");
         CHECK(contessa.coins()==1);
+        CHECK(contessa.role()=="Contessa");
         CHECK(captain2.coins()==1);
+        CHECK(captain2.role()=="Captain");
         cout<<"end check money1\n"<<endl;
 
 

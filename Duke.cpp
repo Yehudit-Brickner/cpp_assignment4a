@@ -23,6 +23,11 @@ Duke::Duke(Game & g, string n){
     g.addplayer(n);
 }
 
+
+string Duke::role(){
+    return this->_role;
+}
+
 void Duke::tax(){
     unsigned long turnn=(unsigned long)this->_game->_turn;
     if(this->_game->_player[turnn]!=this){
@@ -41,14 +46,20 @@ void Duke::tax(){
 
 
 void Duke::block(Player pl){
-   
+    cout<<"enter block"<<endl;
     int start=(int)this->_game->_gameTurns.size()-1;
-    int size=(int)this->_game->_player.size();
+    int size=(int)this->_game->_player.size()-1;
     int end=start-size;
     if(end<0){
         end=0;
     }
-    for (unsigned long i=(unsigned long)start; i >= (unsigned long) end;i--){
+    cout<< "start= "<< start<< " end= "<< end <<endl;
+    unsigned long s =(unsigned long) start;
+    unsigned long e =(unsigned long) end;
+    cout<< "s= "<< s<< " e= "<< e <<endl;
+    for (unsigned long i=s; i >= e; i--){
+        cout<< "i= "<<i<< endl;
+        this->_game->_gameTurns[i].print();
         if(this->_game->_gameTurns[i].getPlayer()==&pl and this->_game->_gameTurns[i].getAction()=="forign_aid" and this->_game->_gameTurns[i].getBlocked()==false ){
            cout<<"blocked"<<endl;
            vector<Player*> p=this->_game->_gameTurns[i].getDoneTo();

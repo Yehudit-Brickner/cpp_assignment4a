@@ -21,6 +21,10 @@ Captain::Captain(Game & g, string n){
     g.addplayer(n);
 }
 
+string Captain::role(){
+    return this->_role;
+}
+
 void Captain::steal(coup::Player p){
     unsigned long turnn=(unsigned long)this->_game->_turn;
     if(this->_game->_player[turnn]!=this){

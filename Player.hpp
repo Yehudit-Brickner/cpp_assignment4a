@@ -48,6 +48,7 @@ namespace coup {
             Assassin(Game & g, string n);
             ~Assassin(){}     
             void coup(Player p) override;
+            string role() override;
     };
 
      class Duke : public Player {
@@ -57,6 +58,7 @@ namespace coup {
             ~Duke(){} 
             void tax();
             void block(coup::Player p);
+            string role() override;
     };   
 
     class Captain : public Player{
@@ -67,6 +69,7 @@ namespace coup {
             void steal(coup::Player p);
             void block(coup::Captain c);
             // void block(coup:: Duke d);
+            string role() override;
     };
     
      class Ambassador : public Player{
@@ -76,6 +79,7 @@ namespace coup {
             ~Ambassador(){}              
             void block(coup::Captain c);
             void transfer(coup::Player p1, coup::Player p2);
+            string role() override;
     
     };
 
@@ -85,6 +89,7 @@ namespace coup {
             Contessa(Game & g, string n);      
             ~Contessa(){} 
             void block(coup::Assassin a);
+            string role() override;
             
     };
 

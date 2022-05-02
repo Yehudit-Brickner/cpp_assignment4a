@@ -22,6 +22,12 @@ Assassin::Assassin(Game & g, string n) {
 }
 
 
+
+string Assassin::role(){
+    return this->_role;
+}
+
+
 void Assassin::coup(Player p){
     unsigned long turnn=(unsigned long)this->_game->_turn;
     if(this->_game->_player[turnn]!=this){

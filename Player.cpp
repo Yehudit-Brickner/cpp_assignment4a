@@ -19,11 +19,10 @@ Player::Player(Game & g, string n){
     }
     g.addplayer(n);
 }
+
 Player::Player(){
   
 }
-
-
 
 string Player::getName(){
     return this->_name;
@@ -46,8 +45,6 @@ int Player::coins(){
 void Player::setState(int s){
     this->_state=1;
 }
-
-
 
 void Player::income(){
     unsigned long turnn=(unsigned long)this->_game->_turn;
@@ -79,9 +76,9 @@ void Player::foreign_aid(){
     cout<<"forign_aid"<<endl;
     updateCoins(2);
     cout<<"added 2 coins"<<endl;
-    Turn t1{*this, 0,"forign_aid"};
-    this->_game->gameTurns.push(t1);
-    this->_game->_gameTurns.push_back(t1);
+    Turn t2{*this, 0,"forign_aid"};
+    this->_game->gameTurns.push(t2);
+    this->_game->_gameTurns.push_back(t2);
     this->_game->updateTurn();
 }
 
