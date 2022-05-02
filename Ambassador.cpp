@@ -40,9 +40,13 @@ void Ambassador::transfer(coup::Player p1, coup::Player p2){
 }
 
 void Ambassador::block(coup::Captain c){
-    unsigned long start=this->_game->_gameTurns.size()-1;
-    unsigned long size=this->_game->_player.size();
-    for (unsigned long i=start; i > start-size;i--){
+    int start=(int)this->_game->_gameTurns.size()-1;
+    int size=(int)this->_game->_player.size();
+    int end=start-size;
+    if(end<0){
+        end=0;
+    }
+    for (unsigned long i=(unsigned long)start; i >= (unsigned long) end;i--){
         if(this->_game->_gameTurns[i].getPlayer()==&c and this->_game->_gameTurns[i].getAction()=="steal" and this->_game->_gameTurns[i].getBlocked()==false ){
            cout<<"blocked"<<endl;
            vector<Player*> p=this->_game->_gameTurns[i].getDoneTo();

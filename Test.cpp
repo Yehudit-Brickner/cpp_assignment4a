@@ -121,8 +121,9 @@ using namespace coup;
         CHECK_NOTHROW( captain1.foreign_aid()); //4
         CHECK_NOTHROW( contessa.foreign_aid()); //4
         CHECK_NOTHROW( captain2.foreign_aid()); //3
+        cout<< "captain2 has "<< captain2.coins() << " coins"<<endl;
         CHECK_NOTHROW( duke.block(captain2)); // this is not a turn
-      
+        cout<< "captain2 has "<< captain2.coins() << " coins"<<endl;
 
        //check everyones income
         cout<<"\ncheck money3"<<endl;

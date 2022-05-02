@@ -61,7 +61,7 @@ void Player::income(){
     cout<<"income"<<endl;
     updateCoins(1);
     cout<<"added a coin"<<endl;
-    Turn t1{*this, 0,"forign_aid"};
+    Turn t1{*this, 0,"income"};
     this->_game->gameTurns.push(t1);
     this->_game->_gameTurns.push_back(t1);
     this->_game->updateTurn();

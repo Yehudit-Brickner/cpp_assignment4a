@@ -42,13 +42,20 @@ void Duke::tax(){
 
 void Duke::block(Player pl){
    
-    unsigned long start=this->_game->_gameTurns.size()-1;
-    unsigned long size=this->_game->_player.size();
-    for (unsigned long i=start; i > start-size;i--){
-        if(this->_game->_gameTurns[i].getPlayer()==&pl and this->_game->_gameTurns[i].getAction()=="foreign_aid" and this->_game->_gameTurns[i].getBlocked()==false ){
+    int start=(int)this->_game->_gameTurns.size()-1;
+    int size=(int)this->_game->_player.size();
+    int end=start-size;
+    if(end<0){
+        end=0;
+    }
+    for (unsigned long i=(unsigned long)start; i >= (unsigned long) end;i--){
+        if(this->_game->_gameTurns[i].getPlayer()==&pl and this->_game->_gameTurns[i].getAction()=="forign_aid" and this->_game->_gameTurns[i].getBlocked()==false ){
            cout<<"blocked"<<endl;
            vector<Player*> p=this->_game->_gameTurns[i].getDoneTo();
+           cout<< "captain2 has "<< p[0]->coins() << " coins"<<endl;
            p[0]->updateCoins(-2);
+           cout<< "captain2 has "<< p[0]->coins() << " coins"<<endl;
+
         }
     }
            
