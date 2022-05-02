@@ -4,13 +4,13 @@
 #include <iostream>
 #include <vector>
 #include "Game.hpp"
-// #include "Turn.hpp"
+#include "Turn.hpp"
 
 using namespace std;
 
 namespace coup {
     class Game;
-    // class Turn;
+    class Turn;
 
     class Player {
         public:
@@ -66,7 +66,7 @@ namespace coup {
             ~Captain(){}  
             void steal(coup::Player p);
             void block(coup::Captain c);
-            void block(coup:: Duke d);
+            // void block(coup:: Duke d);
     };
     
      class Ambassador : public Player{

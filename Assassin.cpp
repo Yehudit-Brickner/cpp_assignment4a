@@ -27,8 +27,15 @@ void Assassin::coup(Player p){
     if(this->_game->_player[turnn]!=this){
          throw std::invalid_argument( "not your turn!" ); 
     }
-    if(this->_coins>=10){
-        throw std::invalid_argument( "you have to do coup!" );  
+    if(this->_coins>=7){
+        this->updateCoins(-7);
+        // kill p
+        p.setState(1);
+        vector<Player*> v1={&p};
+        Turn t1{*this, 0,"coup7",v1};
+        this->_game->gameTurns.push(t1);
+        this->_game->_gameTurns.push_back(t1);
+        this->_game->updateTurn();     
     }
     if(this->_coins<3){
          throw std::invalid_argument( "cant pay 3 coins" ); 
@@ -36,5 +43,9 @@ void Assassin::coup(Player p){
     this->updateCoins(-3);
     // kill p
     p.setState(1);
+    vector<Player*> v1={&p};
+    Turn t1{*this,0, "coup3",v1};
+    this->_game->gameTurns.push(t1);
+    this->_game->_gameTurns.push_back(t1);
     this->_game->updateTurn(); 
 }

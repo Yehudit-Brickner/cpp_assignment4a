@@ -33,12 +33,23 @@ void Duke::tax(){
     }
     this->updateCoins(3);
     cout<<"duke took tax"<<endl;
-    // Turn t1{*this, "tax"};
-    // this->_game.gameTurns.push(t1);
+    Turn t1{*this,0, "tax"};
+    this->_game->gameTurns.push(t1);
+    this->_game->_gameTurns.push_back(t1);
     this->_game->updateTurn(); 
 }
 
 
-void Duke::block(Player p){
-    cout<<"blocked"<< endl;
+void Duke::block(Player pl){
+   
+    unsigned long start=this->_game->_gameTurns.size()-1;
+    unsigned long size=this->_game->_player.size();
+    for (unsigned long i=start; i > start-size;i--){
+        if(this->_game->_gameTurns[i].getPlayer()==&pl and this->_game->_gameTurns[i].getAction()=="foreign_aid" and this->_game->_gameTurns[i].getBlocked()==false ){
+           cout<<"blocked"<<endl;
+           vector<Player*> p=this->_game->_gameTurns[i].getDoneTo();
+           p[0]->updateCoins(-2);
+        }
+    }
+           
 }

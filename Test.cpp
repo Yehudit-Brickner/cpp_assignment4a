@@ -35,7 +35,8 @@ using namespace coup;
        
         g1.print();
         
-        
+        cout<<"queue size is "<< g1.gameTurns.size()<<endl;
+
         vector<string> p1 ={"player1", "player2","player3", "player4","player5", "player6"};
         vector<string> players1 = g1.players();
         for (unsigned long i=0; i<p1.size();i++){
@@ -59,7 +60,7 @@ using namespace coup;
         CHECK_NOTHROW( captain2.income()); //1
         CHECK(g1._turn==0);
      
-
+        cout<<"queue size is "<< g1.gameTurns.size()<<endl;
 
         //check everyones income
         cout<<"\ncheck money1"<<endl;
@@ -88,6 +89,8 @@ using namespace coup;
         CHECK_THROWS(captain2.coup(captain1));
         CHECK_NOTHROW( captain2.foreign_aid()); //3
         
+
+        cout<<"queue size is "<< g1.gameTurns.size()<<endl;
 
         //check everyones income
         cout<<"\ncheck money2"<<endl;

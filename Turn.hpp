@@ -1,23 +1,32 @@
-// #pragma once
-// #include "Player.hpp"
-// #include <vector>
-// #include <string>
-// #include <iostream>
+#pragma once
+#include "Player.hpp"
+#include <vector>
+#include <string>
+#include <iostream>
 
-// using namespace std;
+using namespace std;
 
-// namespace coup {
+namespace coup {
+    class Player;  
+    class Turn{
+        public:
         
-//     class Turn{
-//         public:
-        
-//         Player _whoPlayed;
-//         string _action;
-//         std::vector<Player> _doneTo;
-//         bool _blocked; 
+        Player * _whoPlayed;
+        int coins_stolen;
+        string _action;
+        std::vector<Player*> _doneTo;
+        bool _blocked; 
 
-//         Turn(Player p, string s, vector<Player> v);
-//         Turn(Player p, string s);
-//         ~Turn(){}
-//     };
-// }
+        Turn(Player p, int c, string s, vector<Player*> v);
+        Turn(Player p, int c, string s);
+
+        Player* getPlayer();
+        int getCoins_stolen();
+        string getAction();
+        std::vector<Player*> getDoneTo();
+        bool getBlocked();
+
+        void setBlocked(bool b);
+        ~Turn(){}
+    };
+}

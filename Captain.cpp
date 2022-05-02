@@ -31,17 +31,37 @@ void Captain::steal(coup::Player p){
     }
     p.updateCoins(-2);
     this->updateCoins(2);
-    // vector<Player> v1={p};
-    // Turn t1{*this, "steal"};
-    // this->_game.gameTurns.push(t1);
+    vector<Player*> v1={&p};
+    Turn t1{*this,2, "steal"};
+    this->_game->gameTurns.push(t1);
+    this->_game->_gameTurns.push_back(t1);
     this->_game->updateTurn(); 
 }
 
 
 void Captain::block(coup::Captain c){
-    cout<<"blocked"<<endl;
+    unsigned long start=this->_game->_gameTurns.size()-1;
+    unsigned long size=this->_game->_player.size();
+    for (unsigned long i=start; i > start-size;i--){
+        if(this->_game->_gameTurns[i].getPlayer()==&c and this->_game->_gameTurns[i].getAction()=="steal" and this->_game->_gameTurns[i].getBlocked()==false ){
+           cout<<"blocked"<<endl;
+           vector<Player*> p=this->_game->_gameTurns[i].getDoneTo();
+           p[0]->updateCoins(2);
+           c.updateCoins(-2);
+           this->_game->_gameTurns[i].setBlocked(true);
+        }
+    }
 }
 
-void Captain::block(coup::Duke d){
-    cout<<"blocked"<<endl;
-}
+// void Captain::block(coup::Duke d){
+//     cout<<"blocked"<<endl;
+//     // unsigned long start=this->_game->_gameTurns.size()-1;
+//     // unsigned long size=this->_game->_player.size();
+//     // for (unsigned long i=start; i > start-size;i--){
+//     //     if(this->_game->_gameTurns[i].getPlayer()==&d and this->_game->_gameTurns[i].getAction()=="foreign_aid" and this->_game->_gameTurns[i].getBlocked()==false ){
+//     //        cout<<"blocked"<<endl;
+//     //        vector<Player*> p=this->_game->_gameTurns[i].getDoneTo();
+//     //        p[0]->updateCoins(-2);
+//     //     }
+//     // }
+// }

@@ -13,7 +13,9 @@ using namespace coup;
         std:: vector<coup::Player*> _player;
         std:: vector<string> _p; 
         _turn = 0;
-        // queue<Turn> gameTurns;
+        queue<Turn> gameTurns;
+        std::vector<Turn> _gameTurns;
+        
         
     }
 
@@ -49,13 +51,22 @@ using namespace coup;
         cout<<"state of old player "<<this->_player[(unsigned long)this->_turn]->_state<< endl;        
         this->_turn=(this->_turn+1)%(int)this->_player.size();
         cout<<"state of new player "<<this->_player[(unsigned long)this->_turn]->_state<< endl;
-        unsigned long turnn= (unsigned long)this->_turn;
-        while(this->_player[(unsigned long)this->_turn]->_state!=0){
-            // if (this->_player[turnn]->_state==1){
-            //     this->_player[turnn]->setState(2);
+        // unsigned long turnn= (unsigned long)this->_turn;
+        // while(this->_player[(unsigned long)this->_turn]->_state!=0){
+        //     // if (this->_player[turnn]->_state==1){
+        //     //     this->_player[turnn]->setState(2);
+        //     // }
+        //     this->_turn=(this->_turn+1)%(int)this->_player.size();
+        // }
+        if(this->gameTurns.size()>this->_player.size()){
+            // unsigned long start=this->_gameTurns.size();
+            // unsigned long size=this->_player.size();
+            // for (unsigned long i=start; i > start-size;i--){
+                
             // }
-            this->_turn=(this->_turn+1)%(int)this->_player.size();
+            this->gameTurns.pop();
         }
+
 
     }
 

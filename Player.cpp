@@ -61,9 +61,9 @@ void Player::income(){
     cout<<"income"<<endl;
     updateCoins(1);
     cout<<"added a coin"<<endl;
-    // Game *g;
-    // g = this->_game;
-    // g->updateTurn();
+    Turn t1{*this, 0,"forign_aid"};
+    this->_game->gameTurns.push(t1);
+    this->_game->_gameTurns.push_back(t1);
     this->_game->updateTurn();
 }
 
@@ -79,8 +79,9 @@ void Player::foreign_aid(){
     cout<<"forign_aid"<<endl;
     updateCoins(2);
     cout<<"added 2 coins"<<endl;
-    // Turn t1{*this, "forign_aid"};
-    // this->_game.gameTurns.push(t1);
+    Turn t1{*this, 0,"forign_aid"};
+    this->_game->gameTurns.push(t1);
+    this->_game->_gameTurns.push_back(t1);
     this->_game->updateTurn();
 }
 
@@ -112,9 +113,10 @@ void Player::coup(coup::Player p){
             throw std::invalid_argument( "cant pay 7 coins" ); 
         }
         p.setState(1);
-        // vector<Player> v1={p};
-        // Turn t1{*this, "coup", v1};
-        // this->_game.gameTurns.push(t1);
+        vector<Player*> v1={&p};
+        Turn t1{*this, 0,"coup", v1};
+        this->_game->gameTurns.push(t1);
+        this->_game->_gameTurns.push_back(t1);
         this->_game->updateTurn();
 
     }
@@ -125,9 +127,10 @@ void Player::coup(coup::Player p){
     
         p.setState(1);
         cout<<"the assigned player state is "<< p._state <<endl;
-        // vector<Player> v1={p};
-        // Turn t1{*this, "coup",v1};
-        // this->_game.gameTurns.push(t1);
+        vector<Player*> v1={&p};
+        Turn t1{*this, 0,"coup",v1};
+        this->_game->gameTurns.push(t1);
+        this->_game->_gameTurns.push_back(t1);
         this->_game->updateTurn(); 
     }
 }
