@@ -46,6 +46,12 @@ void Player::setState(int s){
     this->_state=1;
 }
 
+
+void Player::print(){
+    cout<<this<< "  "<<this->role()<< "  "<< this->getName() <<endl;
+}
+
+
 void Player::income(){
     unsigned long turnn=(unsigned long)this->_game->_turn;
     if(this->_game->_player[turnn]!=this){
@@ -59,8 +65,8 @@ void Player::income(){
     updateCoins(1);
     cout<<"added a coin"<<endl;
     Turn t1{*this, 0,"income"};
-    this->_game->gameTurns.push(t1);
-    this->_game->_gameTurns.push_back(t1);
+    // this->_game->gameTurns.push(&t1);
+    this->_game->_gameTurns.push_back(&t1);
     this->_game->updateTurn();
 }
 
@@ -77,8 +83,8 @@ void Player::foreign_aid(){
     updateCoins(2);
     cout<<"added 2 coins"<<endl;
     Turn t2{*this, 0,"forign_aid"};
-    this->_game->gameTurns.push(t2);
-    this->_game->_gameTurns.push_back(t2);
+    // this->_game->gameTurns.push(&t2);
+    this->_game->_gameTurns.push_back(&t2);
     this->_game->updateTurn();
 }
 
@@ -112,8 +118,8 @@ void Player::coup(coup::Player p){
         p.setState(1);
         vector<Player*> v1={&p};
         Turn t1{*this, 0,"coup", v1};
-        this->_game->gameTurns.push(t1);
-        this->_game->_gameTurns.push_back(t1);
+        // this->_game->gameTurns.push(&t1);
+        this->_game->_gameTurns.push_back(&t1);
         this->_game->updateTurn();
 
     }
@@ -126,8 +132,8 @@ void Player::coup(coup::Player p){
         cout<<"the assigned player state is "<< p._state <<endl;
         vector<Player*> v1={&p};
         Turn t1{*this, 0,"coup",v1};
-        this->_game->gameTurns.push(t1);
-        this->_game->_gameTurns.push_back(t1);
+        // this->_game->gameTurns.push(&t1);
+        this->_game->_gameTurns.push_back(&t1);
         this->_game->updateTurn(); 
     }
 }

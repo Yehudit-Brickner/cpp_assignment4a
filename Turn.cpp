@@ -51,5 +51,10 @@ Turn::Turn(Player p,int c, string s){
         cout<<"starting printing"<<endl;
         cout<< this->_whoPlayed <<"  "; 
         Player * p=this->_whoPlayed;
-        cout<< this->_action<< endl;
+        cout<< this->_action<<"   ";
+        cout<< this->coins_stolen<< "   ";
+        cout << this->_blocked;
+        cout<<" "<<endl;
+
+
     }

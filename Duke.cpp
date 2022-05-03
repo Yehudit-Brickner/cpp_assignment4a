@@ -39,8 +39,8 @@ void Duke::tax(){
     this->updateCoins(3);
     cout<<"duke took tax"<<endl;
     Turn t1{*this,0, "tax"};
-    this->_game->gameTurns.push(t1);
-    this->_game->_gameTurns.push_back(t1);
+    // this->_game->gameTurns.push(&t1);
+    this->_game->_gameTurns.push_back(&t1);
     this->_game->updateTurn(); 
 }
 
@@ -59,10 +59,13 @@ void Duke::block(Player pl){
     cout<< "s= "<< s<< " e= "<< e <<endl;
     for (unsigned long i=s; i >= e; i--){
         cout<< "i= "<<i<< endl;
-        this->_game->_gameTurns[i].print();
-        if(this->_game->_gameTurns[i].getPlayer()==&pl and this->_game->_gameTurns[i].getAction()=="forign_aid" and this->_game->_gameTurns[i].getBlocked()==false ){
+        
+        cout<<"who played  "<< (this->_game->_gameTurns[i]->_whoPlayed)<<endl;
+
+
+        if(this->_game->_gameTurns[i]->getPlayer()==&pl and this->_game->_gameTurns[i]->getAction()=="forign_aid" and this->_game->_gameTurns[i]->getBlocked()==false ){
            cout<<"blocked"<<endl;
-           vector<Player*> p=this->_game->_gameTurns[i].getDoneTo();
+           vector<Player*> p=this->_game->_gameTurns[i]->getDoneTo();
            cout<< "captain2 has "<< p[0]->coins() << " coins"<<endl;
            p[0]->updateCoins(-2);
            cout<< "captain2 has "<< p[0]->coins() << " coins"<<endl;

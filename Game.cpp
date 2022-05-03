@@ -13,8 +13,8 @@ using namespace coup;
         std:: vector<coup::Player*> _player;
         std:: vector<string> _p; 
         _turn = 0;
-        queue<Turn> gameTurns;
-        std::vector<Turn> _gameTurns;
+        // queue<Turn> gameTurns;
+        std::vector<Turn*> _gameTurns;
         
         
     }
@@ -31,7 +31,6 @@ using namespace coup;
 
     void Game::addplayer(string const s){
         int const max_player=6;
-        // _p.push_back(p);
         if(_p.size()<max_player){
             _p.push_back(s);
         }
@@ -51,37 +50,14 @@ using namespace coup;
         cout<<"state of old player "<<this->_player[(unsigned long)this->_turn]->_state<< endl;        
         this->_turn=(this->_turn+1)%(int)this->_player.size();
         cout<<"state of new player "<<this->_player[(unsigned long)this->_turn]->_state<< endl;
-        // unsigned long turnn= (unsigned long)this->_turn;
-        // while(this->_player[(unsigned long)this->_turn]->_state!=0){
-        //     // if (this->_player[turnn]->_state==1){
-        //     //     this->_player[turnn]->setState(2);
-        //     // }
-        //     this->_turn=(this->_turn+1)%(int)this->_player.size();
-        // }
-        if(this->gameTurns.size()>this->_player.size()){
-            // unsigned long start=this->_gameTurns.size();
-            // unsigned long size=this->_player.size();
-            // for (unsigned long i=start; i > start-size;i--){
-                
-            // }
-            this->gameTurns.pop();
-        }
-
-
     }
 
  
 
     
  
-// make a vector of the players name
+    // make a vector of the players name
     std::vector<string> Game::players(){
-        // std:: vector<string> playerss;
-        // playerss.resize(this->_p.size());
-        // for (unsigned long i=0; i<this->_p.size();i++){
-        //     playerss[i]=this->_p[i].getName();
-        // }
-        // return playerss;
         return this->_p;
 
     }

@@ -37,8 +37,8 @@ void Captain::steal(coup::Player p){
     this->updateCoins(2);
     vector<Player*> v1={&p};
     Turn t1{*this,2, "steal"};
-    this->_game->gameTurns.push(t1);
-    this->_game->_gameTurns.push_back(t1);
+    // this->_game->gameTurns.push(&t1);
+    this->_game->_gameTurns.push_back(&t1);
     this->_game->updateTurn(); 
 }
 
@@ -51,12 +51,12 @@ void Captain::block(coup::Captain c){
         end=0;
     }
     for (unsigned long i=(unsigned long)start; i > (unsigned long) end;i--){
-        if(this->_game->_gameTurns[i].getPlayer()==&c and this->_game->_gameTurns[i].getAction()=="steal" and this->_game->_gameTurns[i].getBlocked()==false ){
+        if(this->_game->_gameTurns[i]->getPlayer()==&c and this->_game->_gameTurns[i]->getAction()=="steal" and this->_game->_gameTurns[i]->getBlocked()==false ){
            cout<<"blocked"<<endl;
-           vector<Player*> p=this->_game->_gameTurns[i].getDoneTo();
+           vector<Player*> p=this->_game->_gameTurns[i]->getDoneTo();
            p[0]->updateCoins(2);
            c.updateCoins(-2);
-           this->_game->_gameTurns[i].setBlocked(true);
+           this->_game->_gameTurns[i]->setBlocked(true);
         }
     }
 }

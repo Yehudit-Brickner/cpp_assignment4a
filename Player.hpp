@@ -36,6 +36,7 @@ namespace coup {
             void virtual coup(Player p) ;
             // void virtual block(Player p);
             void setState(int s);
+            void print();
     };
 
 

@@ -35,13 +35,23 @@ using namespace coup;
        
         g1.print();
         
-        cout<<"queue size is "<< g1.gameTurns.size()<<endl;
+       
 
         vector<string> p1 ={"player1", "player2","player3", "player4","player5", "player6"};
         vector<string> players1 = g1.players();
         for (unsigned long i=0; i<p1.size();i++){
             CHECK(p1[i]==players1[i]);
         }
+
+
+        duke.print();
+        assassin.print();
+        ambassador.print();
+        captain1.print();
+        contessa.print();
+        captain2.print();
+
+
 
 
         //round 1
@@ -60,7 +70,7 @@ using namespace coup;
         CHECK_NOTHROW( captain2.income()); //1
         CHECK(g1._turn==0);
      
-        cout<<"queue size is "<< g1.gameTurns.size()<<endl;
+       
 
         //check everyones income
         cout<<"\ncheck money1"<<endl;
@@ -116,6 +126,13 @@ using namespace coup;
         CHECK_THROWS(contessa.income());
         CHECK_THROWS(captain1.income());
 
+        // cout<<"printing all turns till now"<<endl;
+        // for (unsigned long i=0; i<g1._gameTurns.size();i++){
+        //     g1._gameTurns[i]->print();
+        // }
+
+
+
 
         //round 3
         // players take tax or forign_aid, the assasin tries to kill captain2, contessa blockes.
@@ -141,90 +158,90 @@ using namespace coup;
         CHECK(captain2.coins()==3);
         cout<<"end check money3\n"<<endl;
 
-        //check everyines role
-        cout<<"\ncheck role"<<endl;
-        CHECK(duke.role()=="player1");
-        CHECK(assassin.role()=="player2");
-        CHECK(ambassador.role()=="player3");
-        CHECK(captain1.role()=="player4");
-        CHECK(contessa.role()=="player5");
-        CHECK(captain2.role()=="player6");
-        cout<<"end check role\n"<<endl;
+        // //check everyines role
+        // cout<<"\ncheck role"<<endl;
+        // CHECK(duke.role()=="player1");
+        // CHECK(assassin.role()=="player2");
+        // CHECK(ambassador.role()=="player3");
+        // CHECK(captain1.role()=="player4");
+        // CHECK(contessa.role()=="player5");
+        // CHECK(captain2.role()=="player6");
+        // cout<<"end check role\n"<<endl;
       
 
         
-        //round 4
-        // players take forign_aid or tax, the ambassador transfors 1 coin from captain1 to contessa
-        CHECK_NOTHROW( duke.tax()); //10
-        CHECK_NOTHROW( assassin.foreign_aid());  //0
-        CHECK_NOTHROW( duke.block(assassin)); // this is not a turn
-        CHECK_NOTHROW( ambassador.transfer(captain1,contessa));  //4
-        CHECK_NOTHROW( captain1.foreign_aid()); //5
-        CHECK_NOTHROW( contessa.foreign_aid()); //7
-        CHECK_NOTHROW( captain2.foreign_aid()); //5
+        // //round 4
+        // // players take forign_aid or tax, the ambassador transfors 1 coin from captain1 to contessa
+        // CHECK_NOTHROW( duke.tax()); //10
+        // CHECK_NOTHROW( assassin.foreign_aid());  //0
+        // CHECK_NOTHROW( duke.block(assassin)); // this is not a turn
+        // CHECK_NOTHROW( ambassador.transfer(captain1,contessa));  //4
+        // CHECK_NOTHROW( captain1.foreign_aid()); //5
+        // CHECK_NOTHROW( contessa.foreign_aid()); //7
+        // CHECK_NOTHROW( captain2.foreign_aid()); //5
        
 
 
-        //round 5
-        // the duke has to assasin- he will assaisn the assain.
-        // everyone else takes forign_aid
-        CHECK_NOTHROW( duke.coup(assassin)); //3
-        // CHECK_NOTHROW( assassin.foreign_aid());  //2
-        CHECK_NOTHROW( ambassador.income());  // 5
-        CHECK_NOTHROW( captain1.foreign_aid()); //7
-        CHECK_NOTHROW( contessa.foreign_aid()); //9
-        CHECK_NOTHROW( captain2.foreign_aid()); //7
-        // the assasin was not saved he is out if the game
+        // //round 5
+        // // the duke has to assasin- he will assaisn the assain.
+        // // everyone else takes forign_aid
+        // CHECK_NOTHROW( duke.coup(assassin)); //3
+        // // CHECK_NOTHROW( assassin.foreign_aid());  //2
+        // CHECK_NOTHROW( ambassador.income());  // 5
+        // CHECK_NOTHROW( captain1.foreign_aid()); //7
+        // CHECK_NOTHROW( contessa.foreign_aid()); //9
+        // CHECK_NOTHROW( captain2.foreign_aid()); //7
+        // // the assasin was not saved he is out if the game
         
-        // vector<string> p2 ={"player1","player3", "player4","player5", "player6"};
-        // vector<string> players2 = g1.players();
-        // for (unsigned long i=0; i<p2.size();i++){
-        //     CHECK(p2[i]==players2[i]);
-        // }
+        // // vector<string> p2 ={"player1","player3", "player4","player5", "player6"};
+        // // vector<string> players2 = g1.players();
+        // // for (unsigned long i=0; i<p2.size();i++){
+        // //     CHECK(p2[i]==players2[i]);
+        // // }
        
 
-        // round 6
-        // captain1 tries to assasin the ambasador the contessa blocks.
-        // the ambassador takes forign aid 
-        // the contessa assisnes the duke.
-        // captain2 steals from the ambassador
-        CHECK_NOTHROW( duke.tax()); // dead
-        CHECK_NOTHROW( ambassador.foreign_aid());  // dead
-        CHECK_NOTHROW( captain1.coup(ambassador)); // dead
-        CHECK_NOTHROW( contessa.coup(duke)); //2
-        CHECK_NOTHROW( captain2.steal(captain1)); //2
-        // the duke was not saved he is out if the game
+        // // round 6
+        // // captain1 tries to assasin the ambasador the contessa blocks.
+        // // the ambassador takes forign aid 
+        // // the contessa assisnes the duke.
+        // // captain2 steals from the ambassador
+        // CHECK_NOTHROW( duke.tax()); // dead
+        // CHECK_NOTHROW( ambassador.foreign_aid());  // dead
+        // CHECK_NOTHROW( captain1.coup(ambassador)); // dead
+        // CHECK_NOTHROW( contessa.coup(duke)); //2
+        // CHECK_NOTHROW( captain2.steal(captain1)); //2
+        // // the duke was not saved he is out if the game
        
-        // vector<string> p3 ={"player5", "player6"};
-        // vector<string> players3 = g1.players();
-        // for (unsigned long i=0; i<p3.size();i++){
-        //     CHECK(p3[i]==players3[i]);
-        // }
+        // // vector<string> p3 ={"player5", "player6"};
+        // // vector<string> players3 = g1.players();
+        // // for (unsigned long i=0; i<p3.size();i++){
+        // //     CHECK(p3[i]==players3[i]);
+        // // }
        
 
-        // round 7
-        CHECK_NOTHROW( contessa.income()); //1
-        CHECK_NOTHROW( captain2.steal(contessa)); //4
+        // // round 7
+        // CHECK_NOTHROW( contessa.income()); //1
+        // CHECK_NOTHROW( captain2.steal(contessa)); //4
         
         
         
-        // round 8
-        CHECK_NOTHROW( contessa.income()); //0
-        CHECK_NOTHROW( captain2.steal(contessa)); //6
+        // // round 8
+        // CHECK_NOTHROW( contessa.income()); //0
+        // CHECK_NOTHROW( captain2.steal(contessa)); //6
      
         
        
-        // round 9
-        CHECK_NOTHROW( contessa.income()); //1
-        CHECK_NOTHROW( captain2.foreign_aid()); //8
+        // // round 9
+        // CHECK_NOTHROW( contessa.income()); //1
+        // CHECK_NOTHROW( captain2.foreign_aid()); //8
         
         
         
-        // round 9
-        CHECK_NOTHROW( contessa.foreign_aid()); //dead
-        CHECK_NOTHROW( captain2.coup(contessa)); //1
+        // // round 9
+        // CHECK_NOTHROW( contessa.foreign_aid()); //dead
+        // CHECK_NOTHROW( captain2.coup(contessa)); //1
        
-        CHECK(g1.winner()=="player5");
+        // CHECK(g1.winner()=="player5");
 
 
 

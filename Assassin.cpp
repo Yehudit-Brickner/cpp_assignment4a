@@ -39,8 +39,8 @@ void Assassin::coup(Player p){
         p.setState(1);
         vector<Player*> v1={&p};
         Turn t1{*this, 0,"coup7",v1};
-        this->_game->gameTurns.push(t1);
-        this->_game->_gameTurns.push_back(t1);
+        // this->_game->gameTurns.push(&t1);
+        this->_game->_gameTurns.push_back(&t1);
         this->_game->updateTurn();     
     }
     if(this->_coins<3){
@@ -51,7 +51,7 @@ void Assassin::coup(Player p){
     p.setState(1);
     vector<Player*> v1={&p};
     Turn t1{*this,0, "coup3",v1};
-    this->_game->gameTurns.push(t1);
-    this->_game->_gameTurns.push_back(t1);
+    // this->_game->gameTurns.push(&t1);
+    this->_game->_gameTurns.push_back(&t1);
     this->_game->updateTurn(); 
 }
